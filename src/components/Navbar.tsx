@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { MenuIcon, XIcon } from '@heroicons/react/outline'; // Install @heroicons/react or replace with any icon set
+import { MenuIcon, XIcon } from '@heroicons/react/outline';
 
 const navLinks = [
-  { name: 'Home', to: '/home' },
-  { name: 'About', to: '#about' },
-  { name: 'Projects', to: '/projects' },
-  { name: 'Leaderboard', to: '/leaderboard' },
-  { name: 'Register', to: '/register' },
+  { name: 'Services', to: '#services' }, 
+  { name: 'Features', to: '#features' },
+  { name: 'Testimonials', to: '#testimonials' },
+  { name: 'Contact', to: '/contact' },
 ];
 
 const Navbar = () => {
@@ -28,18 +27,18 @@ const Navbar = () => {
       } else {
         navigate('/', { state: { scrollTo: targetId } });
       }
+
       setIsMenuOpen(false);
     }
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 px-4 sm:px-14 py-3 bg-transparent backdrop-blur-sm  z-50 flex items-center justify-between">
-      {/* Logo */}
-      <div className="flex-shrink-0 justify-center align-middle">
-        <img src="LOGO.webp" alt="Logo" className="h-10" />
+    <nav className="fixed top-0 left-0 right-0 px-4 sm:px-14 py-3 bg-transparent backdrop-blur-sm z-50 flex items-center justify-between">
+      <div className="flex-shrink-0 flex items-center space-x-2">
+        <img src="LOGO.webp" alt="Autosite logo" className="h-10" />
+        <span className="font-extrabold text-white text-lg sm:text-2xl select-none">Autosite</span>
       </div>
 
-      {/* Navigation Links for larger screens */}
       <div className="hidden sm:flex items-center justify-center px-4 py-2 bg-black/30 backdrop-blur-sm border border-white/20 rounded-full shadow-lg">
         <ul className="flex items-center divide-x divide-gray-600">
           {navLinks.map((link) => (
@@ -56,25 +55,22 @@ const Navbar = () => {
         </ul>
       </div>
 
-      {/* Contact Button for larger screens */}
+      {/* desktop contact -> navigate to /contact */}
       <div className="hidden sm:block">
-        <button className="px-4 py-2 bg-zinc-800 text-white rounded-full hover:bg-zinc-600 transition-colors duration-300">
+        <button
+          onClick={() => navigate('/contact')}
+          className="px-4 py-2 bg-zinc-800 text-white rounded-full hover:bg-zinc-600 transition-colors duration-300"
+        >
           Contact
         </button>
       </div>
 
-      {/* Hamburger Menu for small screens */}
       <div className="sm:hidden flex items-center">
         <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white focus:outline-none">
-          {isMenuOpen ? (
-            <XIcon className="h-6 w-6" />
-          ) : (
-            <MenuIcon className="h-6 w-6" />
-          )}
+          {isMenuOpen ? <XIcon className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-black/95 backdrop-blur-md border-t border-white/20 sm:hidden">
           <ul className="flex flex-col items-center py-4 space-y-4">
@@ -90,7 +86,13 @@ const Navbar = () => {
               </li>
             ))}
             <li>
-              <button className="px-4 py-2 bg-zinc-800 text-white rounded-full hover:bg-zinc-600 transition-colors duration-300">
+              <button
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  navigate('/contact'); // mobile contact -> navigate
+                }}
+                className="px-4 py-2 bg-zinc-800 text-white rounded-full hover:bg-zinc-600 transition-colors duration-300"
+              >
                 Contact
               </button>
             </li>

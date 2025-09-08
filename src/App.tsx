@@ -1,35 +1,24 @@
-import './App.css'
+import './App.css';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 
+import Navbar from './components/Navbar';
+import Footer from './components/ui/Footer';
+import Contact from './components/Contact';
+import Home from './pages/Home';
 
-import Navbar from './components/Navbar'
-import Footer from './components/ui/Footer'
-import { GridBackground } from './components/ui/GridBackground'
-import Page from './components/ui/LogoCloud'
-
-import ReplyRates from './components/ui/ReplyRates'
-import Review from './components/ui/Review'
-
-import Services from './components/ui/Services'
-
-
-
-
-function App() {
-
-
+export default function App() {
   return (
     <>
       <Navbar />
-      <GridBackground />
-      <Services />
 
-      <Review />
-      <ReplyRates />
-      <Page />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
 
       <Footer />
     </>
-  )
+  );
 }
-
-export default App

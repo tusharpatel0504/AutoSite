@@ -4,11 +4,11 @@ import { FiMail } from "react-icons/fi";
 export default function Footer() {
   return (
     <footer className="bg-black text-gray-300 pt-16 pb-8 w-full">
-      <div className="w-full px-4 sm:px-6">
+      <div className=" mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-2 mb-4 ">
               {/* Robot Icon */}
               <svg width="32" height="32" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
                 <rect x="4" y="8" width="16" height="10" rx="4" />
@@ -68,7 +68,7 @@ export default function Footer() {
           </div>
         </div>
         <hr className="border-gray-700 mb-6" />
-        <div className="flex flex-col md:flex-row items-center justify-between text-sm text-gray-400 w-full">
+        <div className="flex flex-col md:flex-row items-center justify-between text-sm text-gray-400">
           <div className="mb-4 md:mb-0 text-center md:text-left">
             © 2024 Autosite. All rights reserved.
           </div>
