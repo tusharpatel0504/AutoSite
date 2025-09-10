@@ -82,23 +82,28 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-4= relative overflow-hidden mt-20">
+    <section id="contact" className="py-28 px-2 sm:px-4 md:px-8 relative overflow-hidden mt-10">
       {/* Black & White Theme Decorations */}
-      <div className="absolute inset-0  pointer-events-none"></div>
-      <div className="absolute top-20 left-10 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 right-10 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 pointer-events-none"></div>
+      <div className="absolute top-20 left-10 w-40 h-40 sm:w-64 sm:h-64 bg-white/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 right-10 w-40 h-40 sm:w-64 sm:h-64 bg-white/5 rounded-full blur-3xl"></div>
 
       <div className="container mx-auto relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-16">
           <div className="inline-flex items-center px-4 py-2 border border-gray-700 rounded-full text-white text-sm font-medium mb-6">
             <MessageSquare className="w-4 h-4 mr-2" />
             Let's Connect
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Ready to <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">Transform</span> Your Business?
+          <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold text-white mb-6">
+            Ready to{" "}
+            <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              Transform
+            </span>{" "}
+            Your Business?
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Join thousands of companies already using our AI solutions. Get started with a free consultation and see the difference automation can make.
+          <p className="text-base sm:text-xl text-gray-300 max-w-3xl mx-auto">
+            Join thousands of companies already using our AI solutions. Get started with a free consultation and see the
+            difference automation can make.
           </p>
         </div>
 
@@ -107,11 +112,13 @@ const Contact = () => {
           <div className="lg:col-span-2">
             <Card className="border-gray-700 bg-gray-950/90 backdrop-blur-sm hover:bg-gray-950 transition-all duration-300">
               <CardHeader>
-                <CardTitle className="text-3xl text-white flex items-center">
+                <CardTitle className="text-xl sm:text-3xl text-white flex items-center">
                   <Send className="mr-3 w-8 h-8 text-white" />
                   Get Started Today
                 </CardTitle>
-                <p className="text-gray-400 text-lg">Fill out the form below and we'll get back to you within 24 hours.</p>
+                <p className="text-gray-400 text-base sm:text-lg">
+                  Fill out the form below and we'll get back to you within 24 hours.
+                </p>
               </CardHeader>
               <CardContent className="space-y-6">
                 <Form {...form}>
@@ -124,7 +131,9 @@ const Contact = () => {
                         rules={{ required: "First name is required" }}
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel htmlFor="firstName" className="text-sm font-medium text-white">First Name</FormLabel>
+                            <FormLabel htmlFor="firstName" className="text-sm font-medium text-white">
+                              First Name
+                            </FormLabel>
                             <FormControl>
                               <Input
                                 id="firstName"
@@ -145,7 +154,9 @@ const Contact = () => {
                         rules={{ required: "Last name is required" }}
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel htmlFor="lastName" className="text-sm font-medium text-white">Last Name</FormLabel>
+                            <FormLabel htmlFor="lastName" className="text-sm font-medium text-white">
+                              Last Name
+                            </FormLabel>
                             <FormControl>
                               <Input
                                 id="lastName"
@@ -174,7 +185,9 @@ const Contact = () => {
                       }}
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel htmlFor="email" className="text-sm font-medium text-white">Email Address</FormLabel>
+                          <FormLabel htmlFor="email" className="text-sm font-medium text-white">
+                            Email Address
+                          </FormLabel>
                           <FormControl>
                             <Input
                               id="email"
@@ -196,7 +209,9 @@ const Contact = () => {
                       name="phoneNumber"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel htmlFor="phoneNumber" className="text-sm font-medium text-white">Phone Number</FormLabel>
+                          <FormLabel htmlFor="phoneNumber" className="text-sm font-medium text-white">
+                            Phone Number
+                          </FormLabel>
                           <FormControl>
                             <Input
                               id="phoneNumber"
@@ -218,7 +233,9 @@ const Contact = () => {
                       rules={{ required: "Message is required" }}
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel htmlFor="message" className="text-sm font-medium text-white">Project Details</FormLabel>
+                          <FormLabel htmlFor="message" className="text-sm font-medium text-white">
+                            Project Details
+                          </FormLabel>
                           <FormControl>
                             <Textarea
                               id="message"
@@ -249,28 +266,28 @@ const Contact = () => {
           </div>
 
           {/* Contact Information Cards */}
-          <div className="space-y-6">
+          <div className="space-y-6 mt-8 lg:mt-0">
             <Card className="border-gray-700 bg-black hover:bg-gray-900 transition-all duration-300 group">
               <CardContent className="p-6 flex items-start">
-                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mr-4">
-                  <Mail className="w-7 h-7 text-black" />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-2xl flex items-center justify-center mr-4">
+                  <Mail className="w-6 h-6 sm:w-7 sm:h-7 text-black" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-white text-lg mb-1">Email Us</h3>
-                  <p className="text-gray-300 mb-1">ritik.autosite@gmail.com</p>
-                  <p className="text-gray-500 text-sm">We respond within 1 hours</p>
+                  <h3 className="font-bold text-white text-base sm:text-lg mb-1">Email Us</h3>
+                  <p className="text-gray-300 mb-1 text-sm sm:text-base">ritik.autosite@gmail.com</p>
+                  <p className="text-gray-500 text-xs sm:text-sm">We respond within 1 hours</p>
                 </div>
               </CardContent>
             </Card>
             <Card className="border-gray-700 bg-black hover:bg-gray-900 transition-all duration-300 group">
               <CardContent className="p-6 flex items-start">
-                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mr-4">
-                  <Phone className="w-7 h-7 text-black" />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-2xl flex items-center justify-center mr-4">
+                  <Phone className="w-6 h-6 sm:w-7 sm:h-7 text-black" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-white text-lg mb-1">Call Us</h3>
-                  <p className="text-gray-300 mb-1">+91 6393828666</p>
-                  <p className="text-gray-500 text-sm">Mon–Sat, 9AM–10PM IST</p>
+                  <h3 className="font-bold text-white text-base sm:text-lg mb-1">Call Us</h3>
+                  <p className="text-gray-300 mb-1 text-sm sm:text-base">+91 6393828666</p>
+                  <p className="text-gray-500 text-xs sm:text-sm">Mon–Sat, 9AM–10PM IST</p>
                 </div>
               </CardContent>
             </Card>
@@ -282,12 +299,12 @@ const Contact = () => {
               }}
             >
               <CardContent className="p-6 flex items-start">
-                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mr-4">
-                  <Calendar className="w-7 h-7 text-black" />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-2xl flex items-center justify-center mr-4">
+                  <Calendar className="w-6 h-6 sm:w-7 sm:h-7 text-black" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-white text-lg mb-1">Book free appointment</h3>
-                  <p className="text-black hover:underline text-sm">Book your free 30 min consultation</p>
+                  <h3 className="font-bold text-white text-base sm:text-lg mb-1">Book free appointment</h3>
+                  <p className="text-black hover:underline text-xs sm:text-sm">Book your free 30 min consultation</p>
                 </div>
               </CardContent>
             </Card>
