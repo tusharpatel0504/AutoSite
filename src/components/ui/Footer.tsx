@@ -3,20 +3,14 @@ import { FiMail } from "react-icons/fi";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-gray-300 pt-16 pb-8 w-full">
+    <footer className="bg-black text-gray-300 pt-16 pb-8 w-full mt-10">
       <div className=" mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4 ">
-              {/* Robot Icon */}
-              <svg width="32" height="32" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                <rect x="4" y="8" width="16" height="10" rx="4" />
-                <path d="M9 8V6a3 3 0 0 1 6 0v2" />
-                <circle cx="8" cy="13" r="1.5" />
-                <circle cx="16" cy="13" r="1.5" />
-                <path d="M12 18v2" />
-              </svg>
+              {/* Replace SVG with your logo */}
+              <img src="/LOGO.webp" alt="Autosite Logo" className="h-10 w-auto" />
               <span className="text-2xl font-bold text-white">Autosite</span>
             </div>
             <p className="mb-6 text-base">

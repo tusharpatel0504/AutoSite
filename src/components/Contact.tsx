@@ -1,15 +1,40 @@
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm((s) => ({ ...s, [e.target.name]: e.target.value }));
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // submit logic
-    console.log("submit", form);
+    setIsLoading(true);
+
+    emailjs.send(
+      'service_101grhn',       // Replace with your Service ID
+      'template_7ju77we',      // Replace with your Template ID
+      {
+        from_name: form.name,
+        from_email: form.email,
+        phone: form.phone,
+        message: form.message,
+      },
+      '1-9QphrTBjdITZNnI'       // Replace with your User ID / Public Key
+    ).then(
+      (result) => {
+        console.log("Email sent successfully:", result.text);
+        alert("Message sent successfully!");
+        setForm({ name: "", email: "", phone: "", message: "" });
+        setIsLoading(false);
+      },
+      (error) => {
+        console.error("Email sending error:", error.text);
+        alert("Something went wrong. Please try again.");
+        setIsLoading(false);
+      }
+    );
   };
 
   return (
@@ -52,7 +77,8 @@ export default function Contact() {
                   name="name"
                   value={form.name}
                   onChange={handleChange}
-                  className="w-full bg-transparent border-b border-gray-700 py-3 text-gray-100 placeholder-gray-500 focus:outline-none"
+                  disabled={isLoading}
+                  className="w-full bg-transparent border-b border-gray-700 py-3 text-gray-100 placeholder-gray-500 focus:outline-none focus:border-blue-600 transition"
                   placeholder="Your full name"
                 />
               </div>
@@ -64,7 +90,8 @@ export default function Contact() {
                   type="email"
                   value={form.email}
                   onChange={handleChange}
-                  className="w-full bg-transparent border-b border-gray-700 py-3 text-gray-100 placeholder-gray-500 focus:outline-none"
+                  disabled={isLoading}
+                  className="w-full bg-transparent border-b border-gray-700 py-3 text-gray-100 placeholder-gray-500 focus:outline-none focus:border-blue-600 transition"
                   placeholder="you@company.com"
                 />
               </div>
@@ -75,7 +102,8 @@ export default function Contact() {
                   name="phone"
                   value={form.phone}
                   onChange={handleChange}
-                  className="w-full bg-transparent border-b border-gray-700 py-3 text-gray-100 placeholder-gray-500 focus:outline-none"
+                  disabled={isLoading}
+                  className="w-full bg-transparent border-b border-gray-700 py-3 text-gray-100 placeholder-gray-500 focus:outline-none focus:border-blue-600 transition"
                   placeholder="+1 (555) 123-4567"
                 />
               </div>
@@ -86,8 +114,9 @@ export default function Contact() {
                   name="message"
                   value={form.message}
                   onChange={handleChange}
+                  disabled={isLoading}
                   rows={5}
-                  className="w-full bg-transparent border border-gray-800 rounded-md p-3 text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-blue-600"
+                  className="w-full bg-transparent border border-gray-800 rounded-md p-3 text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-blue-600 transition"
                   placeholder="Tell us about your project..."
                 />
               </div>
@@ -95,9 +124,12 @@ export default function Contact() {
               <div className="pt-4">
                 <button
                   type="submit"
-                  className="w-full bg-white/10 hover:bg-white/20 text-gray-100 py-3 rounded-md font-semibold transition"
+                  disabled={isLoading}
+                  className={`w-full ${
+                    isLoading ? "bg-blue-800" : "bg-white/10 hover:bg-white/20"
+                  } text-gray-100 py-3 rounded-md font-semibold transition`}
                 >
-                  SUBMIT
+                  {isLoading ? "Sending..." : "SUBMIT"}
                 </button>
               </div>
             </form>

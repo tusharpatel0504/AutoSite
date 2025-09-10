@@ -7,8 +7,9 @@
   padding: 0;
   
 }
-body{
+body {
   background: black;
+  scroll-behavior: smooth; /* Add this line */
 }
 
 :root {
@@ -52,4 +53,3 @@ body{
 .animate-meteor {
   animation: var(--animate-meteor);
 }
-

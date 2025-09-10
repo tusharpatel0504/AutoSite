@@ -1,16 +1,25 @@
 import { cn } from "../../lib/utils";
-
+import { BackgroundBeams } from "./background-beams";
+import { InteractiveHoverButton } from "./InteractiveHoverButton ";
+import { useNavigate } from "react-router-dom";
 
 
 export function GridBackground() {
+  const navigate = useNavigate();
+
+  const handleLearnMoreClick = () => {
+    window.open("https://calendly.com/guptaritik67856/30min?month=2025-09", "_blank");
+  };
+
   return (
     <div className="relative flex h-[50rem] w-full items-center justify-center bg-white dark:bg-black">
+       <BackgroundBeams/>
       <div
         className={cn(
           "absolute inset-0",
           "[background-size:40px_40px]",
-          "[background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)]",
-          "dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]",
+          "[background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(#e4e4e7_1px,transparent_1px)]",
+          "dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(#262626_1px,transparent_1px)]",
         )}
       />
       {/* Radial gradient for the container to give a faded look */}
@@ -23,9 +32,15 @@ export function GridBackground() {
           Transform your business with intelligent automation, AI-powered chatbots, and seamless workflow solutions designed for the modern enterprise.
         </p>
          <div className="flex justify-center gap-4 mt-4">
-            <button className="px-6 py-2 rounded-lg bg-black text-white dark:bg-white dark:text-black font-semibold transition-colors duration-300 hover:bg-zinc-700 dark:hover:bg-zinc-200">Get Started</button>
-            <button className="px-6 py-2 rounded-lg bg-white text-black dark:bg-black dark:text-white border font-semibold transition-colors duration-300 hover:bg-zinc-200 dark:hover:bg-zinc-700">Learn More</button>
+            <InteractiveHoverButton onClick={() => navigate("#services")}>Get Started</InteractiveHoverButton>
+            <button
+            onClick={handleLearnMoreClick}
+            className="px-6 py-2 rounded-3xl bg-white text-black dark:bg-black dark:text-white border font-semibold transition-colors duration-300 hover:bg-zinc-200 dark:hover:bg-zinc-700"
+          >
+            Learn More
+          </button>
           </div>
+         
       </div>
     </div>
   );

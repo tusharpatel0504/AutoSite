@@ -1,9 +1,15 @@
 import { SparklesCore } from '../ui/Sparkles';
+import { InteractiveHoverButton } from './InteractiveHoverButton ';
 
 export default function Page() {
+  const handleBookClick = () => {
+    window.open("https://calendly.com/guptaritik67856/30min?month=2025-09", "_blank");
+  };
+
   return (
     <div className="min-h-screen w-full overflow-hidden bg-black">
-      <div className="mx-auto mt-20 w-full max-w-4xl px-4">
+      
+      <div className="mx-auto mt-48 w-full max-w-4xl px-4">
         <div className="text-center">
           <span className="block text-3xl sm:text-5xl font-extrabold text-white mb-2">
             Why Choose Autosite
@@ -55,7 +61,7 @@ export default function Page() {
           </div>
         </div>
       </div>
-
+     
       <div className="relative -mt-32 h-96 w-full overflow-hidden [mask-image:radial-gradient(50%_50%,white,transparent)] before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_bottom_center,#fff,transparent_70%)] before:opacity-40 after:absolute after:top-1/2 after:-left-1/2 after:aspect-[1/0.7] after:w-[200%] after:rounded-[100%] after:border-t after:border-[#c5769066] after:bg-zinc-900">
         <SparklesCore
           id="tsparticles"
@@ -63,7 +69,13 @@ export default function Page() {
           particleDensity={300}
           className="absolute inset-x-0 bottom-0 h-full w-full [mask-image:radial-gradient(50%_50%,white,transparent_85%)]"
         />
+        
       </div>
+        <div className='flex justify-center mb-20 -mt-24'>
+          <InteractiveHoverButton onClick={handleBookClick}>
+            Book appointment
+          </InteractiveHoverButton>
+        </div>
     </div>
   );
 }
