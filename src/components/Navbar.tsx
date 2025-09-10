@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom"; // Add these imports
+import { useNavigate, useLocation } from "react-router-dom";
 
 const navLinks = [
-    { name: "Home", to: "/" },
+  { name: "Home", to: "/" },
   { name: "Services", to: "#services" },
   { name: "Testimonials", to: "#testimonials" },
   { name: "Contact", to: "/contact" },
@@ -18,9 +18,21 @@ const Navbar = () => {
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
+    e.preventDefault();
+    setIsMenuOpen(false);
+
+    if (href === "/") {
+      // If already on home, scroll to top
+      if (location.pathname === "/") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        // Navigate to home without refresh
+        navigate("/", { state: { scrollTo: "home" } });
+      }
+      return;
+    }
+
     if (href.startsWith("#")) {
-      e.preventDefault();
-      setIsMenuOpen(false);
       if (location.pathname !== "/") {
         // Navigate to home and pass target section in state
         navigate("/", { state: { scrollTo: href.substring(1) } });
@@ -31,6 +43,9 @@ const Navbar = () => {
           targetElement.scrollIntoView({ behavior: "smooth" });
         }
       }
+    } else {
+      // For other routes
+      navigate(href);
     }
   };
 

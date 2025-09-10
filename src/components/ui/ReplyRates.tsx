@@ -1,10 +1,16 @@
-
+import { cn } from "../../lib/utils";
 export default function ReplyRates() {
   return (
     <section className="bg-black min-h-screen py-12 px-4 flex flex-col items-center relative overflow-hidden">
       {/* Dot Background */}
-
-
+        <div
+        className={cn(
+          "absolute inset-0",
+          "[background-size:40px_40px]",
+          "[background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(#e4e4e7_1px,transparent_1px)]",
+          "dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(#262626_1px,transparent_1px)]",
+        )}
+      />
       {/* Content */}
       <div className="relative z-20 flex flex-col items-center w-full">
         <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-300 text-center mb-4 leading-snug">

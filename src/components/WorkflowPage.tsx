@@ -13,9 +13,9 @@ const chatbots = [
       "Seamless human handover when needed",
       "Integration with CRM systems",
       "Lead qualification & caller intent detection",
-      "Lead qualification & caller intent detection",
     ],
     demoUrl: "https://calendly.com/guptaritik67856/inbound-call-demo",
+    video: "/workflowvid2.mp4",
   },
   {
     heading: "Email Compaigning",
@@ -29,6 +29,7 @@ const chatbots = [
       "Autoreply to customer queries on email",
     ],
     demoUrl: "https://calendly.com/guptaritik67856/email-campaign-demo",
+    video: "/workflowvid2.mp4",
   },
   {
     heading: "Instagram and WhatsApp Automation",
@@ -43,8 +44,11 @@ const chatbots = [
       "Lead Qualification and deep Sales Analysis",
     ],
     demoUrl: "https://calendly.com/guptaritik67856/instagram-whatsapp-demo",
+    video: "/wrokflowvid1.mp4",
   },
 ];
+
+const ipadMockup = "/apple-ipad-air-4-medium.png";
 
 const WorkflowPage = () => {
   useEffect(() => {
@@ -57,7 +61,7 @@ const WorkflowPage = () => {
 
   return (
     <div className="relative min-h-screen w-full bg-black flex flex-col items-center justify-center overflow-hidden">
-      {/* Dot Pattern Background - covers full area */}
+      {/* Dot Pattern Background */}
       <div
         className={cn(
           "absolute inset-0 z-0",
@@ -80,45 +84,80 @@ const WorkflowPage = () => {
           backgroundSize: "65% 65%, 65% 65%, 65% 65%, 65% 65%",
         }}
       />
+
       {/* Page Heading */}
-      <div className="mb-12 text-center mt-24 relative z-20">
-        <h1 className="text-5xl md:text-6xl font-medium text-white mb-4">
+      <div className="mb-12 text-center mt-24 relative z-20 px-4">
+        <h1 className="text-2xl sm:text-3xl md:text-5xl font-medium text-white mb-4">
           Workflow Automation
         </h1>
-        <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
+        <p className="text-sm sm:text-base md:text-lg text-gray-200 max-w-2xl mx-auto">
           Discover how our intelligent workflow automation solutions streamline
           business processes, reduce manual work, and increase operational
           efficiency.
         </p>
       </div>
+
       {/* Chatbot Cards */}
-      <div className="flex flex-col gap-12 w-full max-w-5xl relative z-20">
+      <div className="flex flex-col gap-12 w-full max-w-6xl relative z-20 px-4 sm:px-6 md:px-8">
         {chatbots.map((bot, idx) => (
           <div
             key={idx}
-            className="bg-[#181818] rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 md:gap-16 shadow-lg"
+            className="bg-[#181818] rounded-2xl p-6 sm:p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 md:gap-12 shadow-lg"
           >
             {/* Left Section */}
-            <div className="flex-1 text-white">
-              <h2 className="text-5xl md:text-6xl font-light mb-6">
+            <div className="flex-1 text-white w-full">
+              <h2 className="text-lg sm:text-xl md:text-2xl font-light mb-4 md:mb-6">
                 {bot.heading}
               </h2>
-              <p className="text-base md:text-lg mb-8 max-w-md">
+              <p className="text-xs sm:text-sm md:text-base mb-6 md:mb-8 max-w-md">
                 {bot.description}
               </p>
               <div>
-                <h3 className="text-2xl font-light mb-2">FEATURES</h3>
-                <ul className="list-disc list-inside text-lg ml-4 space-y-1 mb-6">
+                <h3 className="text-sm sm:text-base md:text-lg font-light mb-2">
+                  FEATURES
+                </h3>
+                <ul className="list-disc list-inside text-xs sm:text-sm md:text-base ml-4 space-y-1 mb-6">
                   {bot.features.map((f, i) => (
                     <li key={i}>{f}</li>
                   ))}
                 </ul>
-                <InteractiveHoverButton onClick={() => handleDemoClick(bot.demoUrl)} className="ml-4 -mt-4">View Demo</InteractiveHoverButton>
+                <InteractiveHoverButton
+                  onClick={() => handleDemoClick(bot.demoUrl)}
+                  className="ml-2 md:ml-4 -mt-2 sm:-mt-4"
+                >
+                  View Demo
+                </InteractiveHoverButton>
               </div>
             </div>
+
             {/* Right Section */}
-            <div className="flex-1 flex items-center justify-center relative">
-              <div className="w-[250px] h-[450px] bg-gray-300 rounded-[2.5rem] border-4 border-[#2e4156] shadow-inner" />
+            <div className="flex-1 flex items-center justify-center relative w-full">
+              <div className="relative w-[90vw] sm:w-[70vw] md:w-[500px] flex items-center justify-center">
+                {/* iPad Mockup */}
+                <img
+                  src={ipadMockup}
+                  alt="iPad Air 4 Mockup"
+                  className="w-full h-full object-contain drop-shadow-2xl pointer-events-none select-none"
+                  draggable={false}
+                />
+                {/* Video Overlay */}
+                <video
+                  src={bot.video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute"
+                  style={{
+                    width: "94%",
+                    height: "90%",
+                    borderRadius: "0.75rem",
+                    objectFit: "cover",
+                    background: "#000",
+                    boxShadow: "0 2px 12px rgba(0,0,0,0.5)",
+                  }}
+                />
+              </div>
             </div>
           </div>
         ))}

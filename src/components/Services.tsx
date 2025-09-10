@@ -1,31 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { cn } from "../lib/utils";
 import { ArrowUpRight } from "lucide-react";
-import { BackgroundBeams } from "./ui/background-beams";
 import { useNavigate } from "react-router-dom"; // Add this import
 
 // Meteor Shower Background Component
-const MeteorShower = () => (
-  <div className="absolute inset-0 pointer-events-none z-0">
-    {[...Array(12)].map((_, i) => (
-      <span
-        key={i}
-        className="animate-meteor absolute"
-        style={{
-          top: `${Math.random() * 100}%`,
-          left: `${Math.random() * 100}%`,
-          width: "2px",
-          height: "120px",
-          background: "linear-gradient(180deg, #fff 0%, #fffff 100%)",
-          opacity: 0.3 + Math.random() * 0.4,
-          borderRadius: "999px",
-          transform: `rotate(${Math.random() * 360}deg)`,
-          animationDelay: `${Math.random() * 5}s`,
-        }}
-      />
-    ))}
-  </div>
-);
 
 const projects = [
   {
@@ -39,14 +17,14 @@ const projects = [
     id: "Workflow Automation",
     title: "Workflow Automation",
     subtitle: " Streamline your business processes with intelligent custom automation solutions for operational workflows.",
-    image: "/2.png",
+    image: "/img1.png",
     borderColor: "border-[#7B4CFF]",
   },
   {
     id: "Customer Support AI",
     title: "Customer Support AI",
     subtitle: "Enhance customer experience with intelligent support systems that understand context and provide personalized solutions.",
-    image: "/3.png",
+    image: "/img1.png",
     borderColor: "border-[#E0E0E0]",
   },
 ];
@@ -58,7 +36,7 @@ export default function RecentProjects() {
   return (
     <div className="relative min-h-screen bg-black text-white flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 overflow-hidden pt-24">
       {/* Meteor Shower + Beams */}
-    <BackgroundBeams/>
+    
       {/* Grid Background */}
       <div
         className={cn(

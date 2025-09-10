@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { BackgroundBeams } from "./background-beams";
-import { cn } from "../../lib/utils";
+
 const reviews = [
   {
     text: (
@@ -143,12 +142,8 @@ export default function Review() {
   }
 
   return (
-    <section className="relative bg-black py-20 overflow-hidden">
-      
-      <div className="pointer-events-none absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-black via-black/80 to-transparent z-10" />
-      <div className="pointer-events-none absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
-      <BackgroundBeams/>
-      <div className="max-w-6xl mx-auto px-4 relative z-20">
+    <section className="relative py-20 overflow-hidden mt-20">
+      <div className="max-w-6xl mx-auto px-4 relative">
         <h2 className="text-4xl sm:text-5xl font-extrabold text-white text-center mb-4">
           What Our Users Are Saying
         </h2>

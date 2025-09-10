@@ -1,10 +1,29 @@
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function Footer() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Handles smooth scroll or navigation then scroll
+  const handleFooterNav = (e: React.MouseEvent<HTMLAnchorElement>, target: string) => {
+    e.preventDefault();
+    if (location.pathname !== "/") {
+      // Navigate to home and scroll after navigation
+      navigate("/", { state: { scrollTo: target } });
+    } else {
+      // Already on home, just scroll
+      const el = document.getElementById(target);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  };
+
   return (
     <footer className="bg-black text-gray-300 pt-16 pb-8 w-full mt-10">
-      <div className=" mx-auto px-4 sm:px-6">
+      <div className="mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div>
@@ -27,19 +46,45 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-bold text-white mb-4">Services</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="hover:text-white transition">Chatbot Development</a></li>
-              <li><a href="#" className="hover:text-white transition">Workflow Automation</a></li>
-              <li><a href="#" className="hover:text-white transition">Customer Support AI</a></li>
+              <li><Link to="/chatbot1" className="hover:text-white transition">Chatbot Development</Link></li>
+              <li><Link to="/workflow" className="hover:text-white transition">Workflow Automation</Link></li>
+              <li><Link to="#" className="hover:text-white transition">Customer Support AI</Link></li>
             </ul>
           </div>
           {/* Company */}
           <div>
             <h3 className="text-lg font-bold text-white mb-4">Company</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="hover:text-white transition">About Us</a></li>
-              <li><a href="#" className="hover:text-white transition">Careers</a></li>
-              <li><a href="#" className="hover:text-white transition">Blog</a></li>
-              <li><a href="#" className="hover:text-white transition">Contact</a></li>
+              <li>
+                <a
+                  href="#home"
+                  className="hover:text-white transition"
+                  onClick={(e) => handleFooterNav(e, "home")}
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  className="hover:text-white transition"
+                  onClick={(e) => handleFooterNav(e, "services")}
+                >
+                  Service
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#testimonials"
+                  className="hover:text-white transition"
+                  onClick={(e) => handleFooterNav(e, "testimonials")}
+                >
+                  Testimonial
+                </a>
+              </li>
+              <li>
+                <Link to="/contact" className="hover:text-white transition">Contact</Link>
+              </li>
             </ul>
           </div>
           {/* Newsletter */}

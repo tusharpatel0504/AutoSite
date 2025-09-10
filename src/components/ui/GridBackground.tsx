@@ -1,5 +1,4 @@
 import { cn } from "../../lib/utils";
-import { BackgroundBeams } from "./background-beams";
 import { InteractiveHoverButton } from "./InteractiveHoverButton ";
 import { useNavigate } from "react-router-dom";
 
@@ -13,7 +12,7 @@ export function GridBackground() {
 
   return (
     <div className="relative flex h-[50rem] w-full items-center justify-center bg-white dark:bg-black">
-       <BackgroundBeams/>
+       
       <div
         className={cn(
           "absolute inset-0",

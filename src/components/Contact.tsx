@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import emailjs from "emailjs-com";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
   const [isLoading, setIsLoading] = useState(false);
+
+  // Scroll to top when Contact page mounts
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm((s) => ({ ...s, [e.target.name]: e.target.value }));
@@ -38,7 +43,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="bg-black min-h-screen py-16 px-6 md:px-12 flex items-start justify-center mt-12">
+    <section className=" min-h-screen py-16 px-6 md:px-12 flex items-start justify-center mt-12">
       <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Left - big heading + contact info */}
         <div className="flex flex-col justify-center gap-8">

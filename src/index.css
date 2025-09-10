@@ -8,8 +8,16 @@
   
 }
 body {
-  background: black;
+  background-color: #000;
+  background-image:
+    linear-gradient(to right, #44444477 1px, transparent 1px),
+    linear-gradient(to bottom, #44444477 1px, transparent 1px);
+  background-size: 40px 40px;
   scroll-behavior: smooth; /* Add this line */
+}
+
+html, body {
+  height: 100%;
 }
 
 :root {

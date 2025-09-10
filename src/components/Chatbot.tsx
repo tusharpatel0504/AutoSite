@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { DotBackgroundDemo } from "./DotBackgroundDemo";
 
 const chatbots = [
@@ -7,6 +7,7 @@ const chatbots = [
     description:
       "Personal style advisor that understands fashion trends, provides styling tips, suggests outfit combinations, and helps customers make informed fashion choices.",
     features: ["FEATURE 1", "FEATURE 2", "FEATURE 3", "FEATURE 4"],
+    
   },
   {
     heading: "Health Assistant",

@@ -32,7 +32,8 @@ export default function Home() {
   }, [location, navigate]);
 
   return (
-    <main id="home" className="min-h-screen bg-black text-white">
+    <main id="home" className="min-h-screen text-white">
+      
       <GridBackground />
       <section
         id="services"

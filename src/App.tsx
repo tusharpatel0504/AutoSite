@@ -15,7 +15,9 @@ export default function App() {
     <>
       <Navbar />
 
-      <Routes>
+     <div>
+      
+       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
@@ -24,6 +26,7 @@ export default function App() {
         <Route path="/chatbot1" element={<DotBackgroundDemo />} />
         <Route path="/workflow" element={<WorkflowPage />} />
       </Routes>
+     </div>
 
       <Footer />
     </>

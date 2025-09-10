@@ -1,5 +1,5 @@
 import { cn } from "../lib/utils";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { InteractiveHoverButton } from "./ui/InteractiveHoverButton ";
 
 const chatbots = [
@@ -15,6 +15,7 @@ const chatbots = [
 			"Image upload suggestions",
 		],
 		demoUrl: "https://calendly.com/guptaritik67856/fashion-stylist-demo",
+		video: "/video1.mp4",
 	},
 	{
 		heading: "Skincare Beauty Chatbot",
@@ -27,6 +28,7 @@ const chatbots = [
 			"Analytics & Insights Dashboard",
 		],
 		demoUrl: "https://calendly.com/guptaritik67856/skincare-beauty-demo",
+		video: "/video1.mp4",
 	},
 	{
 		heading: "E-commerce Shopping Assistant",
@@ -41,6 +43,7 @@ const chatbots = [
 			"Lead generation and deep customer's problem Analysis",
 		],
 		demoUrl: "https://calendly.com/guptaritik67856/ecommerce-shopping-demo",
+		video: "/video3.mp4",
 	},
 ];
 
@@ -114,13 +117,28 @@ export function DotBackgroundDemo() {
 											<li key={i}>{f}</li>
 										))}
 									</ul>
-								
 									<InteractiveHoverButton onClick={() => handleDemoClick(bot.demoUrl)} className="ml-4 -mt-4">View Demo</InteractiveHoverButton>
 								</div>
 							</div>
-							{/* Right Section */}
+							{/* Right Section: Mobile Mockup with Video */}
 							<div className="flex-1 flex items-center justify-center relative">
-								<div className="w-[300px] h-[450px] bg-gray-300 rounded-[2.5rem] border-4 border-[#2e4156] shadow-inner" />
+								<div className="w-[300px] h-[480px] bg-gray-400 rounded-[1.5rem] border-1 border-[#2e4156] shadow-inner flex items-center justify-center overflow-hidden relative">
+									<video
+										src={bot.video}
+										autoPlay
+										loop
+										muted
+										playsInline
+										className="w-[280px] h-[460px] object-cover rounded-[1rem]"
+										style={{
+											position: "absolute",
+											top: "50%",
+											left: "50%",
+											transform: "translate(-50%, -50%)",
+											background: "#000",
+										}}
+									/>
+								</div>
 							</div>
 						</div>
 					))}
