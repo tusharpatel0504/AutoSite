@@ -2,78 +2,43 @@ import React, { useEffect, useRef, useState } from "react";
 
 const reviews = [
   {
-    text: (
-      <>
-        NexaUI has completely transformed our development workflow.{" "}
-        <span className="bg-blue-700/80 text-white px-1 rounded font-bold">
-          The component system saved us weeks of custom coding and design work.
-        </span>{" "}
-        Our team can now focus on business logic instead of UI details.
-      </>
-    ),
-    name: "Jordan Hayes",
-    role: "CTO at Quantum Innovations",
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+    text: "Autosite's AI chatbots have revolutionized our customer service. We've seen a 40% reduction in response time and 95% customer satisfaction rate.",
+    name: "Suyash Ranjan",
+    role: "Founder",
+    company: "Mercato Agency",
+    initials: "SJ",
     stars: 5,
   },
   {
-    text: (
-      <>
-        NexaUI has the perfect balance of flexibility and structure.{" "}
-        <span className="bg-blue-700/80 text-white px-1 rounded font-bold">
-          We can maintain brand consistency while still creating unique experiences.
-        </span>{" "}
-        Our clients are consistently impressed with the results.
-      </>
-    ),
-    name: "Leo Tanaka",
-    role: "Creative Technologist at Prism Agency",
-    avatar: "https://randomuser.me/api/portraits/men/65.jpg",
+    text: "The workflow automation has streamlined our processes incredibly. What used to take hours now happens in minutes with their intelligent systems.",
+    name: "Michael Beares",
+    role: "Founder & CEO",
+    company: "Clutch.co",
+    initials: "MB",
     stars: 5,
   },
   {
-    text: (
-      <>
-        I was skeptical at first, but NexaUI proved me wrong.{" "}
-        <span className="bg-blue-700/80 text-white px-1 rounded font-bold">
-          The accessibility features and documentation are top-notch.
-        </span>{" "}
-        Highly recommended!
-      </>
-    ),
-    name: "Alex Morgan",
-    role: "Frontend Engineer",
-    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+    text: "Their fashion industry chatbot understands our customers' needs perfectly. Sales conversions have increased by 40% since implementation.",
+    name: "Puneet Anil Sehgal",
+    role: "Co-Founder",
+    company: "Freakins",
+    initials: "PS",
     stars: 5,
   },
   {
-    text: (
-      <>
-        Our conversion rates have increased by 28% since implementing NexaUI.{" "}
-        <span className="bg-blue-700/80 text-white px-1 rounded font-bold">
-          The checkout flow components are optimized for both desktop and mobile.
-        </span>{" "}
-        The dark mode support was also a huge hit with our customers.
-      </>
-    ),
-    name: "Sophia Martinez",
-    role: "E-commerce Director at StyleHub",
-    avatar: "https://randomuser.me/api/portraits/women/89.jpg",
+    text: "Awesome AI solutions! The integration was seamless and the results are good. Highly recommend Autosite for any startup.",
+    name: "Tanmay Kumar",
+    role: "CEO",
+    company: "sellular",
+    initials: "TK",
     stars: 5,
   },
   {
-    text: (
-      <>
-        The team support and regular updates make working with NexaUI a breeze.{" "}
-        <span className="bg-blue-700/80 text-white px-1 rounded font-bold">
-          I feel confident knowing the components are always improving.
-        </span>{" "}
-        It’s a game-changer.
-      </>
-    ),
-    name: "Maya Patel",
-    role: "UI Designer",
-    avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    text: "The Email automation system has optimized our communication workflows. Automatic Emailing with follow-up is now 70% more efficient.",
+    name: "Kushagra Swami",
+    role: "Founder",
+    company: "Identityforgestidio",
+    initials: "KS",
     stars: 5,
   },
 ];
@@ -150,7 +115,7 @@ export default function Review() {
         <p className="text-lg text-gray-300 text-center mb-8">
           Don't just take our word for it. Here's what{" "}
           <span className="text-blue-400 font-semibold">real developers</span> are saying about{" "}
-          <span className="text-blue-400 font-semibold">NexaUI</span>
+          <span className="text-blue-400 font-semibold">Autosite</span>
         </p>
 
         <div className="flex items-center justify-center gap-3 mb-6">
@@ -192,38 +157,44 @@ export default function Review() {
             {visible.map((review, idx) => (
               <article
                 key={idx}
-                className="bg-[#18181b] rounded-xl border border-gray-800 p-6 flex flex-col justify-between shadow-lg transition-transform duration-300 hover:-translate-y-1"
-                aria-label={`Review by ${review.name}, ${review.role}`}
+                className="bg-[#18181b] rounded-xl border border-gray-800 p-6 flex flex-col justify-between shadow-lg transition-transform duration-300 hover:-translate-y-1 relative"
+                aria-label={`Review by ${review.name}`}
               >
-                <p className="text-gray-200 text-lg mb-4">{review.text}</p>
-                <div className="flex items-center gap-3 mt-4">
-                  <div className="flex gap-1 text-blue-400" aria-hidden>
-                    {Array(review.stars)
-                      .fill(0)
-                      .map((_, i) => (
-                        <svg
-                          key={i}
-                          width="18"
-                          height="18"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                          className="shrink-0"
-                        >
-                          <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z" />
-                        </svg>
-                      ))}
+                <div className="flex gap-1 text-yellow-400 mb-4" aria-hidden>
+                  {Array(review.stars)
+                    .fill(0)
+                    .map((_, i) => (
+                      <svg
+                        key={i}
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        className="shrink-0"
+                      >
+                        <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z" />
+                      </svg>
+                    ))}
+                </div>
+                <p className="text-gray-200 text-lg mb-6 flex-grow">"{review.text}"</p>
+                <div className="flex items-center gap-4 mt-auto">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center text-white font-bold text-lg">
+                    {review.initials}
                   </div>
-                  <img
-                    src={review.avatar}
-                    alt={review.name}
-                    className="w-12 h-12 rounded-full border-2 border-white object-cover"
-                    loading="lazy"
-                  />
                   <div>
                     <div className="text-white font-semibold">{review.name}</div>
                     <div className="text-gray-400 text-sm">{review.role}</div>
+                    <div className="text-blue-400 text-sm font-medium">{review.company}</div>
                   </div>
                 </div>
+                <svg
+                  className="absolute top-4 right-4 w-16 h-16 text-gray-700/50"
+                  fill="currentColor"
+                  viewBox="0 0 32 32"
+                  aria-hidden="true"
+                >
+                  <path d="M9.333 22.667C7.333 22.667 5.667 21 5.667 19V13C5.667 11 7.333 9.333 9.333 9.333H14L12.333 14.667H9.333V19H12.333L14 22.667H9.333ZM22.667 22.667C20.667 22.667 19 21 19 19V13C19 11 20.667 9.333 22.667 9.333H27.333L25.667 14.667H22.667V19H25.667L27.333 22.667H22.667Z" />
+                </svg>
               </article>
             ))}
           </div>
@@ -245,4 +216,4 @@ export default function Review() {
       </div>
     </section>
   );
-};
+}

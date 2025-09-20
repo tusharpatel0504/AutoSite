@@ -17,14 +17,14 @@ const projects = [
     id: "Workflow Automation",
     title: "Workflow Automation",
     subtitle: " Streamline your business processes with intelligent custom automation solutions for operational workflows.",
-    image: "/img1.png",
+    image: "/workflowCoverImage.png",
     borderColor: "border-[#7B4CFF]",
   },
   {
     id: "Customer Support AI",
     title: "Customer Support AI",
     subtitle: "Enhance customer experience with intelligent support systems that understand context and provide personalized solutions.",
-    image: "/img1.png",
+    image: "/CustomER Support.png",
     borderColor: "border-[#E0E0E0]",
   },
 ];

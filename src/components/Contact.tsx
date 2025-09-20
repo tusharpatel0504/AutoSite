@@ -6,7 +6,7 @@ import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../components/ui/form";
 import { Mail, Phone, MessageSquare, Calendar, Send } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useToast } from "../components/hooks/use-toast";
 import { useForm } from "react-hook-form";
 
@@ -27,6 +27,10 @@ interface ContactFormData {
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   const form = useForm<ContactFormData>({
     defaultValues: {
@@ -91,7 +95,7 @@ const Contact = () => {
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-10 sm:mb-16">
           <div className="inline-flex items-center px-4 py-2 border border-gray-700 rounded-full text-white text-sm font-medium mb-6">
-            <MessageSquare className="w-4 h-4 mr-2" />
+            <MessageSquare className="w-4 h-4 mr-2 " />
             Let's Connect
           </div>
           <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold text-white mb-6">
@@ -295,7 +299,7 @@ const Contact = () => {
             <Card
               className="cursor-pointer border-gray-700 bg-black hover:bg-gray-900 transition-all duration-300 group"
               onClick={() => {
-                window.Calendly?.initPopupWidget?.({ url: 'https://calendly.com/guptaritik67856/30min' });
+                window.open("https://calendly.com/guptaritik67856/30min?month=2025-09", "_blank");
               }}
             >
               <CardContent className="p-6 flex items-start">
@@ -304,7 +308,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-white text-base sm:text-lg mb-1">Book free appointment</h3>
-                  <p className="text-black hover:underline text-xs sm:text-sm">Book your free 30 min consultation</p>
+                  <p className="text-blue-400 hover:underline text-xs sm:text-sm">Book your free 30 min consultation</p>
                 </div>
               </CardContent>
             </Card>

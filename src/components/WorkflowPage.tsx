@@ -106,14 +106,14 @@ const WorkflowPage = () => {
           >
             {/* Left Section */}
             <div className="flex-1 text-white w-full">
-              <h2 className="text-lg sm:text-xl md:text-2xl font-light mb-4 md:mb-6">
+              <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 md:mb-6">
                 {bot.heading}
               </h2>
               <p className="text-xs sm:text-sm md:text-base mb-6 md:mb-8 max-w-md">
                 {bot.description}
               </p>
               <div>
-                <h3 className="text-sm sm:text-base md:text-lg font-light mb-2">
+                <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">
                   FEATURES
                 </h3>
                 <ul className="list-disc list-inside text-xs sm:text-sm md:text-base ml-4 space-y-1 mb-6">
