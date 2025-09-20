@@ -15,7 +15,7 @@ const chatbots = [
 			"Image upload suggestions",
 		],
 		demoUrl: "https://calendly.com/guptaritik67856/fashion-stylist-demo",
-		video: "/video1.mp4",
+		video: "https://res.cloudinary.com/dasdeglju/video/upload/v1758400191/Fashion_Stylist_Bot_video_vwsfys.mp4",
 	},
 	{
 		heading: "Skincare Beauty Chatbot",
@@ -28,7 +28,7 @@ const chatbots = [
 			"Analytics & Insights Dashboard",
 		],
 		demoUrl: "https://calendly.com/guptaritik67856/skincare-beauty-demo",
-		video: "/video1.mp4",
+		video: "https://res.cloudinary.com/dasdeglju/video/upload/v1758400190/Skincare_Beauty_Chatbot_osnhip.mp4",
 	},
 	{
 		heading: "E-commerce Shopping Assistant",
@@ -43,7 +43,7 @@ const chatbots = [
 			"Lead generation and deep customer's problem Analysis",
 		],
 		demoUrl: "https://calendly.com/guptaritik67856/ecommerce-shopping-demo",
-		video: "/video3.mp4",
+		video: "https://res.cloudinary.com/dasdeglju/video/upload/v1758400197/E-commerce_Shopping_Assistant_hwhntv.mp4",
 	},
 ];
 
