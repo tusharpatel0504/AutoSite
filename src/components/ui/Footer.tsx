@@ -48,7 +48,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li><Link to="/chatbot1" className="hover:text-white transition">Chatbot Development</Link></li>
               <li><Link to="/workflow" className="hover:text-white transition">Workflow Automation</Link></li>
-              <li><Link to="#" className="hover:text-white transition">Customer Support AI</Link></li>
+              <li><Link to="https://calendly.com/guptaritik67856/30min?month=2025-09" className="hover:text-white transition">Customer Support AI</Link></li>
             </ul>
           </div>
           {/* Company */}

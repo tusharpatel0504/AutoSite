@@ -52,12 +52,16 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 px-4 sm:px-8 md:px-12 py-4 md:py-6 bg-transparent backdrop-blur-sm z-50 flex items-center justify-between">
       {/* Logo */}
-      <div className="flex-shrink-0 flex items-center space-x-2">
+      <a
+        href="/"
+        onClick={(e) => handleScroll(e, "/")}
+        className="flex-shrink-0 flex items-center space-x-2 cursor-pointer"
+      >
         <img src="LOGO.webp" alt="Logo" className="h-8 sm:h-10" />
         <span className="font-extrabold text-white text-lg sm:text-xl md:text-2xl select-none">
           Autosite
         </span>
-      </div>
+      </a>
 
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center justify-center px-4 py-2 bg-black/30 backdrop-blur-sm border border-white/20 rounded-full shadow-lg">
@@ -67,7 +71,7 @@ const Navbar = () => {
               <a
                 href={link.to}
                 onClick={(e) => handleScroll(e, link.to)}
-                className="text-sm lg:text-base text-gray-300 hover:text-white transition-colors duration-300 hover:underline hover:underline-offset-4"
+                className="relative text-sm lg:text-base text-gray-300 hover:text-white transition-colors duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
               >
                 {link.name}
               </a>
@@ -82,7 +86,7 @@ const Navbar = () => {
           href={calendlyUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="px-3 sm:px-4 py-2 bg-zinc-800 text-white text-sm md:text-base rounded-full hover:bg-zinc-600 transition-colors duration-300"
+          className="px-6 py-2 rounded-3xl bg-white text-black dark:bg-black dark:text-white border font-semibold transition-colors duration-300 hover:bg-zinc-200 dark:hover:bg-zinc-700"
         >
           Book Appointment
         </a>
@@ -110,7 +114,7 @@ const Navbar = () => {
               <a
                 href={link.to}
                 onClick={(e) => handleScroll(e, link.to)}
-                className="text-base text-gray-300 hover:text-white transition-colors duration-300 hover:underline hover:underline-offset-4"
+                className="relative text-base text-gray-300 hover:text-white transition-colors duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
               >
                 {link.name}
               </a>

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { cn } from "../lib/utils";
 import { InteractiveHoverButton } from "./ui/InteractiveHoverButton ";
+import { LazyVideo } from "./LazyVideo";
 
 const chatbots = [
   {
@@ -14,8 +15,8 @@ const chatbots = [
       "Integration with CRM systems",
       "Lead qualification & caller intent detection",
     ],
-    demoUrl: "https://calendly.com/guptaritik67856/inbound-call-demo",
-    video: "/workflowvid2.mp4",
+    demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758412661/Inbound_Call_Automation_wgg3pb.mp4",
+    video: "https://res.cloudinary.com/dasdeglju/video/upload/v1758412661/Inbound_Call_Automation_wgg3pb.mp4",
   },
   {
     heading: "Email Compaigning",
@@ -28,8 +29,8 @@ const chatbots = [
       "Extact high quality leads",
       "Autoreply to customer queries on email",
     ],
-    demoUrl: "https://calendly.com/guptaritik67856/email-campaign-demo",
-    video: "/workflowvid2.mp4",
+    demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758412643/workflowvid2_abvdtd.mp4",
+    video: "https://res.cloudinary.com/dasdeglju/video/upload/v1758412643/workflowvid2_abvdtd.mp4",
   },
   {
     heading: "Instagram and WhatsApp Automation",
@@ -43,8 +44,8 @@ const chatbots = [
       "Integration with CRM systems",
       "Lead Qualification and deep Sales Analysis",
     ],
-    demoUrl: "https://calendly.com/guptaritik67856/instagram-whatsapp-demo",
-    video: "/wrokflowvid1.mp4",
+    demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758412668/wrokflowvid1_pkshxu.mp4",
+    video: "https://res.cloudinary.com/dasdeglju/video/upload/v1758412668/wrokflowvid1_pkshxu.mp4",
   },
 ];
 
@@ -141,7 +142,7 @@ const WorkflowPage = () => {
                   draggable={false}
                 />
                 {/* Video Overlay */}
-                <video
+                <LazyVideo
                   src={bot.video}
                   autoPlay
                   loop

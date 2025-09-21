@@ -108,9 +108,10 @@ export default function RecentProjects() {
                 onClick={() => {
                   if (project.id === "Chatbot Development") {
                     navigate("/chatbot1"); // Navigate to /chatbot1
-                  }
-                  else if (project.id === "Workflow Automation") {
+                  } else if (project.id === "Workflow Automation") {
                     navigate("/workflow"); // Navigate to /workflow
+                  } else if (project.id === "Customer Support AI") {
+                    window.open("https://calendly.com/guptaritik67856/30min?month=2025-09", "_blank"); // Navigate to external link
                   }
                 }}
                 className="flex items-center justify-between bg-[#111] rounded-xl p-3 sm:p-4 md:p-5 hover:bg-[#1a1a1a] transition cursor-pointer"

@@ -1,5 +1,6 @@
 import { SparklesCore } from "../ui/Sparkles";
 import { InteractiveHoverButton } from "../ui/InteractiveHoverButton ";
+import { Counter } from "./Counter";
 
 export default function Page() {
   const handleBookClick = () => {
@@ -10,9 +11,9 @@ export default function Page() {
   };
 
   const stats = [
-    { value: "30+", label: "Projects Delivered" },
-    { value: "70+", label: "Happy Clients" },
-    { value: "97%", label: "Satisfaction Rate" },
+    { value: 30, label: "Projects Delivered", suffix: "+" },
+    { value: 70, label: "Happy Clients", suffix: "+" },
+    { value: 97, label: "Satisfaction Rate", suffix: "%" },
   ];
 
   return (
@@ -36,8 +37,8 @@ export default function Page() {
             {stats.map((stat, index) => (
               <div key={index} className="flex flex-col items-center">
                 {/* Number box */}
-                <div className="bg-white text-black font-bold text-3xl sm:text-4xl px-4 py-4 rounded-md mb-4">
-                  {stat.value}
+                <div className="bg-white text-black font-bold text-3xl sm:text-4xl px-4 py-4 rounded-md mb-4 min-w-[120px] text-center">
+                  <Counter end={stat.value} suffix={stat.suffix} />
                 </div>
 
                 {/* Divider line */}
