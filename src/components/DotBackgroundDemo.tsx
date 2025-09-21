@@ -152,7 +152,7 @@ export function DotBackgroundDemo() {
 										width: "94%",
 										height: "90%",
 										borderRadius: "0.75rem",
-										objectFit: "cover",
+										objectFit: "contain",
 										background: "#000",
 										boxShadow: "0 2px 12px rgba(0,0,0,0.5)",
 									}}
