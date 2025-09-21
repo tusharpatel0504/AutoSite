@@ -51,19 +51,22 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 px-4 sm:px-8 md:px-12 py-4 md:py-6 bg-transparent backdrop-blur-sm z-50 flex items-center justify-between">
-      {/* Logo */}
-      <a
-        href="/"
-        onClick={(e) => handleScroll(e, "/")}
-        className="flex-shrink-0 flex items-center space-x-2 cursor-pointer"
-      >
-        <img src="LOGO.webp" alt="Logo" className="h-8 sm:h-10" />
-        <span className="font-extrabold text-white text-lg sm:text-xl md:text-2xl select-none">
-          Autosite
-        </span>
-      </a>
+      {/* Left Section */}
+      <div className="flex-1 flex justify-start">
+        {/* Logo */}
+        <a
+          href="/"
+          onClick={(e) => handleScroll(e, "/")}
+          className="flex-shrink-0 flex items-center space-x-2 cursor-pointer"
+        >
+          <img src="LOGO.webp" alt="Logo" className="h-8 sm:h-10" />
+          <span className="font-extrabold text-white text-lg sm:text-xl md:text-2xl select-none">
+            Autosite
+          </span>
+        </a>
+      </div>
 
-      {/* Desktop Menu */}
+      {/* Center Section (Desktop Menu) */}
       <div className="hidden md:flex items-center justify-center px-4 py-2 bg-black/30 backdrop-blur-sm border border-white/20 rounded-full shadow-lg">
         <ul className="flex items-center gap-2 lg:gap-4 xl:gap-6">
           {navLinks.map((link) => (
@@ -80,8 +83,8 @@ const Navbar = () => {
         </ul>
       </div>
 
-      {/* Desktop CTA */}
-      <div className="hidden md:block">
+      {/* Right Section (Desktop CTA) */}
+      <div className="hidden md:flex flex-1 justify-end">
         <a
           href={calendlyUrl}
           target="_blank"
@@ -114,7 +117,7 @@ const Navbar = () => {
               <a
                 href={link.to}
                 onClick={(e) => handleScroll(e, link.to)}
-                className="relative text-base text-gray-300 hover:text-white transition-colors duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                className="text-base text-gray-300 hover:text-white transition-colors duration-300 hover:underline hover:underline-offset-4"
               >
                 {link.name}
               </a>
