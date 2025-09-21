@@ -9,6 +9,7 @@ import Home from './components/Home';
 import Chatbot from './components/Chatbot';
 import WorkflowPage from './components/WorkflowPage';
 import { DotBackgroundDemo } from './components/DotBackgroundDemo';
+import { Toaster } from './components/ui/toaster';
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
      </div>
 
       <Footer />
+      <Toaster />
     </>
   );
 }

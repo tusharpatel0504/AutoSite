@@ -7,7 +7,7 @@ import { Textarea } from "../components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../components/ui/form";
 import { Mail, Phone, MessageSquare, Calendar, Send } from "lucide-react";
 import { useState, useEffect } from "react";
-import { useToast } from "../components/hooks/use-toast";
+import { useToast } from "../lib/use-toast";
 import { useForm } from "react-hook-form";
 
 declare global {
@@ -62,8 +62,9 @@ const Contact = () => {
       });
 
       toast({
-        title: "Success!",
-        description: "Your message has been sent successfully.",
+        variant: "success",
+        title: "Message Sent!",
+        description: "Thank you for starting your AI journey with us. We'll be in touch shortly!",
       });
 
       form.reset();
