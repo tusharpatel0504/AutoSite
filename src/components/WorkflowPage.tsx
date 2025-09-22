@@ -16,7 +16,7 @@ const chatbots = [
       "Lead qualification & caller intent detection",
     ],
     demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758551557/Inbound_Call_Automation_svt34p.mp4",
-    video: "https://res.cloudinary.com/dasdeglju/video/upload/v1758551557/Inbound_Call_Automation_svt34p.mp4",
+    video: "/InboundCallAutomation.mp4",
   },
   {
     heading: "Email Compaigning",
@@ -30,7 +30,7 @@ const chatbots = [
       "Autoreply to customer queries on email",
     ],
     demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758551547/workflowvid2_n2j9dc.mp4",
-    video: "https://res.cloudinary.com/dasdeglju/video/upload/v1758551547/workflowvid2_n2j9dc.mp4",
+    video: "/workflowvid2.mp4",
   },
   {
     heading: "Instagram and WhatsApp Automation",
@@ -45,7 +45,7 @@ const chatbots = [
       "Lead Qualification and deep Sales Analysis",
     ],
     demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758551552/wrokflowvid1_a22fmr.mp4",
-    video: "https://res.cloudinary.com/dasdeglju/video/upload/v1758551552/wrokflowvid1_a22fmr.mp4",
+    video: "/wrokflowvid1.mp4",
   },
 ];
 
