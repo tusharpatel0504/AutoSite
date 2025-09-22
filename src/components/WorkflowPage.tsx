@@ -15,8 +15,8 @@ const chatbots = [
       "Integration with CRM systems",
       "Lead qualification & caller intent detection",
     ],
-    demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758412661/Inbound_Call_Automation_wgg3pb.mp4",
-    video: "https://res.cloudinary.com/dasdeglju/video/upload/v1758412661/Inbound_Call_Automation_wgg3pb.mp4",
+    demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758551557/Inbound_Call_Automation_svt34p.mp4",
+    video: "https://res.cloudinary.com/dasdeglju/video/upload/v1758551557/Inbound_Call_Automation_svt34p.mp4",
   },
   {
     heading: "Email Compaigning",
@@ -29,8 +29,8 @@ const chatbots = [
       "Extact high quality leads",
       "Autoreply to customer queries on email",
     ],
-    demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758412643/workflowvid2_abvdtd.mp4",
-    video: "https://res.cloudinary.com/dasdeglju/video/upload/v1758412643/workflowvid2_abvdtd.mp4",
+    demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758551547/workflowvid2_n2j9dc.mp4",
+    video: "https://res.cloudinary.com/dasdeglju/video/upload/v1758551547/workflowvid2_n2j9dc.mp4",
   },
   {
     heading: "Instagram and WhatsApp Automation",
@@ -44,8 +44,8 @@ const chatbots = [
       "Integration with CRM systems",
       "Lead Qualification and deep Sales Analysis",
     ],
-    demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758412668/wrokflowvid1_pkshxu.mp4",
-    video: "https://res.cloudinary.com/dasdeglju/video/upload/v1758412668/wrokflowvid1_pkshxu.mp4",
+    demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758551552/wrokflowvid1_a22fmr.mp4",
+    video: "https://res.cloudinary.com/dasdeglju/video/upload/v1758551552/wrokflowvid1_a22fmr.mp4",
   },
 ];
 

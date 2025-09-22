@@ -15,8 +15,8 @@ const chatbots = [
 			"Lead generation and deep customer's problem Analysis",
 			"Image upload suggestions",
 		],
-		demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758412657/Fashion_Stylist_Bot_video_lwcgqf.mp4",
-		video: "https://res.cloudinary.com/dasdeglju/video/upload/v1758412657/Fashion_Stylist_Bot_video_lwcgqf.mp4",
+		demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758551550/Fashion_Stylist_Bot_video_urv8bt.mp4",
+		video: "https://res.cloudinary.com/dasdeglju/video/upload/v1758551550/Fashion_Stylist_Bot_video_urv8bt.mp4",
 	},
 	{
 		heading: "Skincare Beauty Chatbot",
@@ -28,8 +28,8 @@ const chatbots = [
 			"24/7 Query Handling through Chat and voice and order tracking",
 			"Analytics & Insights Dashboard",
 		],
-		demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758412677/Skincare_Beauty_Chatbot_bp9uso.mp4",
-		video: "https://res.cloudinary.com/dasdeglju/video/upload/v1758412677/Skincare_Beauty_Chatbot_bp9uso.mp4",
+		demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758551557/Skincare_Beauty_Chatbot_tceqti.mp4",
+		video: "https://res.cloudinary.com/dasdeglju/video/upload/v1758551557/Skincare_Beauty_Chatbot_tceqti.mp4",
 	},
 	{
 		heading: "E-commerce Shopping Assistant",
@@ -43,8 +43,8 @@ const chatbots = [
 			"Personalized shopping experience",
 			"Lead generation and deep customer's problem Analysis",
 		],
-		demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758412657/E-commerce_Shopping_Assistant_uhpyb1.mp4",
-		video: "https://res.cloudinary.com/dasdeglju/video/upload/v1758412657/E-commerce_Shopping_Assistant_uhpyb1.mp4",
+		demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758551557/E-commerce_Shopping_Assistant_qioabx.mp4",
+		video: "https://res.cloudinary.com/dasdeglju/video/upload/v1758551557/E-commerce_Shopping_Assistant_qioabx.mp4",
 	},
 ];
 
