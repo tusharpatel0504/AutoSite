@@ -1,11 +1,16 @@
 // Inspired by react-hot-toast library
 import * as React from "react"
+import { type VariantProps } from "class-variance-authority"
+import { type toastVariants } from "../components/ui/toast"
 
-type ToasterToast = ToastProps & {
+type ToasterToast = Omit<ToastProps, "id"> & {
   id: string
   title?: React.ReactNode
   description?: React.ReactNode
-  action?: React.ReactElement<any> // Using 'any' for simplicity with ToastAction
+  action?: React.ReactElement<any>
+  variant?: VariantProps<typeof toastVariants>["variant"]
+  open?: boolean
+  onOpenChange?: (open: boolean) => void
 }
 
 const TOAST_LIMIT = 1
@@ -96,7 +101,7 @@ export function toast(props: Toast) {
       ...props,
       id,
       open: true,
-      onOpenChange: (open) => {
+      onOpenChange: (open: boolean) => {
         if (!open) dismiss()
       },
     },

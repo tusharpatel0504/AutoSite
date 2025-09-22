@@ -72,14 +72,11 @@ const Contact = () => {
       let errorMsg = "Something went wrong. Please try again.";
       if (error instanceof Error) {
         errorMsg = error.message;
-        console.error("Form error:", error.message);
-      } else {
-        console.error("Form error:", error);
       }
       toast({
-        title: "Error",
-        description: errorMsg,
         variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: errorMsg,
       });
     } finally {
       setIsSubmitting(false);
