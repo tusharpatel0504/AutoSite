@@ -1,8 +1,10 @@
 import { useEffect } from "react";
 import { cn } from "../lib/utils";
 import { InteractiveHoverButton } from "./ui/InteractiveHoverButton ";
-import { LazyVideo } from "./LazyVideo";
 
+const newImage = "/whatsapp.webp";
+const gmailimg = "/emailing.png";
+const callauto = "/callauto.png";
 const chatbots = [
   {
     heading: "Inbound Call Automation",
@@ -15,8 +17,8 @@ const chatbots = [
       "Integration with CRM systems",
       "Lead qualification & caller intent detection",
     ],
-    demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758551557/Inbound_Call_Automation_svt34p.mp4",
-    video: "https://res.cloudinary.com/dasdeglju/video/upload/v1758551557/Inbound_Call_Automation_svt34p.mp4",
+    demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758727204/workflowvid2_sk70nh.mp4",
+    video: callauto,
   },
   {
     heading: "Email Compaigning",
@@ -29,8 +31,8 @@ const chatbots = [
       "Extact high quality leads",
       "Autoreply to customer queries on email",
     ],
-    demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758551547/workflowvid2_n2j9dc.mp4",
-    video: "https://res.cloudinary.com/dasdeglju/video/upload/v1758551547/workflowvid2_n2j9dc.mp4",
+    demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758727204/workflowvid2_sk70nh.mp4",
+    video: gmailimg,
   },
   {
     heading: "Instagram and WhatsApp Automation",
@@ -44,8 +46,8 @@ const chatbots = [
       "Integration with CRM systems",
       "Lead Qualification and deep Sales Analysis",
     ],
-    demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758551552/wrokflowvid1_a22fmr.mp4",
-    video: "https://res.cloudinary.com/dasdeglju/video/upload/v1758551552/wrokflowvid1_a22fmr.mp4",
+    demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758727194/wrokflowvid1_iqfcr6.mp4",
+    video: newImage,
   },
 ];
 
@@ -138,16 +140,13 @@ const WorkflowPage = () => {
                 <img
                   src={ipadMockup}
                   alt="iPad Air 4 Mockup"
-                  className="w-full h-full object-contain drop-shadow-2xl pointer-events-none select-none"
+                  className="w-full h-full object-cover drop-shadow-2xl pointer-events-none select-none"
                   draggable={false}
                 />
-                {/* Video Overlay */}
-                <LazyVideo
+                {/* Image Overlay */}
+                <img
                   src={bot.video}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
+                  alt={bot.heading}
                   className="absolute"
                   style={{
                     width: "94%",
