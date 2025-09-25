@@ -1,7 +1,10 @@
 import { useEffect } from "react";
 import { cn } from "../lib/utils";
 import { InteractiveHoverButton } from "./ui/InteractiveHoverButton ";
-import { LazyVideo } from "./LazyVideo";
+
+const newImage = "/plum.png";
+const gmailimg = "/honey.png";
+const callauto = "/fffson.png";
 
 const chatbots = [
 	{
@@ -16,7 +19,7 @@ const chatbots = [
 			"Image upload suggestions",
 		],
 		demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758727187/Fashion_Stylist_Bot_video_muyqo9.mp4",
-		video: "",
+		 video: callauto,
 	},
 	{
 		heading: "Skincare Beauty Chatbot",
@@ -29,7 +32,7 @@ const chatbots = [
 			"Analytics & Insights Dashboard",
 		],
 		demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758727204/Skincare_Beauty_Chatbot_pm7fob.mp4",
-		video: "",
+		video: newImage,
 	},
 	{
 		heading: "E-commerce Shopping Assistant",
@@ -44,7 +47,7 @@ const chatbots = [
 			"Lead generation and deep customer's problem Analysis",
 		],
 		demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758727192/E-commerce_Shopping_Assistant_jb8f6b.mp4",
-		video: "",
+		video: gmailimg,
 	},
 ];
 
@@ -140,13 +143,10 @@ export function DotBackgroundDemo() {
 									className="w-full h-full object-contain drop-shadow-2xl pointer-events-none select-none"
 									draggable={false}
 								/>
-								{/* Video Overlay */}
-								<LazyVideo
+								{/* Image Overlay */}
+								<img
 									src={bot.video}
-									autoPlay
-									loop
-									muted
-									playsInline
+									alt={bot.heading}
 									className="absolute"
 									style={{
 										width: "94%",
