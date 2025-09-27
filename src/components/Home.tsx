@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Review from "./ui/Review";
-import ReplyRates from "./ui/ReplyRates";
+
 import LogoCloud from "./ui/LogoCloud";
 import Services from "./Services";
 import { cn } from "../lib/utils";
