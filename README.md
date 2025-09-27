@@ -2,12 +2,13 @@
 
 Autosite is a sleek, modern, and fully responsive landing page designed to showcase AI-powered business solutions. Built with React, TypeScript, and Tailwind CSS, it provides a visually engaging user experience with smooth animations, interactive elements, and a clean, component-based architecture.
 
-![Autosite Screenshot](https://via.placeholder.com/1200x600.png?text=Your+Project+Screenshot+Here)
+<img width="1883" height="978" alt="image" src="https://github.com/user-attachments/assets/178daced-fa68-43ea-a358-6ddc6dc4d73e" />
 *(Replace the placeholder above with a screenshot of your application)*
 
-**Live Demo:** [your-live-demo-url.com](https://your-live-demo-url.com)
+**Live Demo:** [your-live-demo-url.com](https://autosite.co.in)
 
 ---
+
 
 ## ✨ Features
 
