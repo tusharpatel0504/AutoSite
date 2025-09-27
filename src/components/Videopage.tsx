@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { cn } from "../lib/utils";
 
@@ -6,9 +6,13 @@ export const VideoPlayerPage: React.FC = () => {
   const location = useLocation();
   const videoId = location.state?.videoUrl; // picking videoId from navigate state
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   if (!videoId) {
     return (
-      <div className="flex items-center justify-center h-screen bg-black">
+      <div className="flex items-center justify-center h-screen bg-black text-white text-lg">
         ❌ Error: No video selected
       </div>
     );

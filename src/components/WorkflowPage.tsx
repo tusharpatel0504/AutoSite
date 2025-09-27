@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { cn } from "../lib/utils";
 import { InteractiveHoverButton } from "./ui/InteractiveHoverButton ";
+import { useNavigate } from "react-router-dom";
 
 const newImage = "/whatsapp.webp";
 const gmailimg = "/emailing.png";
@@ -17,7 +18,7 @@ const chatbots = [
       "Integration with CRM systems",
       "Lead qualification & caller intent detection",
     ],
-    demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758727204/workflowvid2_sk70nh.mp4",
+    demoUrl: "E90kF380hqA",
     video: callauto,
   },
   {
@@ -46,7 +47,7 @@ const chatbots = [
       "Integration with CRM systems",
       "Lead Qualification and deep Sales Analysis",
     ],
-    demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758727194/wrokflowvid1_iqfcr6.mp4",
+    demoUrl: "hUdibiZFv98",
     video: newImage,
   },
 ];
@@ -54,14 +55,14 @@ const chatbots = [
 const ipadMockup = "/apple-ipad-air-4-medium.png";
 
 const WorkflowPage = () => {
+  const navigate = useNavigate();
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   const handleDemoClick = (url: string) => {
-    window.open(url, "_blank");
+    navigate("/videoplayer", { state: { videoUrl: url } });
   };
-
   return (
     <div className="relative min-h-screen w-full bg-black flex flex-col items-center justify-center overflow-hidden">
       {/* Dot Pattern Background */}

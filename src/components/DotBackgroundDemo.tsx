@@ -19,7 +19,7 @@ const chatbots = [
 			"Lead generation and deep customer's problem Analysis",
 			"Image upload suggestions",
 		],
-		demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758727187/Fashion_Stylist_Bot_video_muyqo9.mp4",
+		demoUrl: "La6A-2ra-I4",
 		 video: callauto,
 	},
 	{
@@ -32,7 +32,7 @@ const chatbots = [
 			"24/7 Query Handling through Chat and voice and order tracking",
 			"Analytics & Insights Dashboard",
 		],
-		demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758727204/Skincare_Beauty_Chatbot_pm7fob.mp4",
+		demoUrl: "wAb_bLJyQcE",
 		video: newImage,
 	},
 	{
@@ -47,7 +47,7 @@ const chatbots = [
 			"Personalized shopping experience",
 			"Lead generation and deep customer's problem Analysis",
 		],
-		demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758727192/E-commerce_Shopping_Assistant_jb8f6b.mp4",
+		demoUrl: "14uDkqhGFys",
 		video: gmailimg,
 	},
 ];
@@ -62,7 +62,7 @@ export function DotBackgroundDemo() {
     }, []);
 
     const handleDemoClick = (url: string) => {
-        navigate("/videoplayer", { state: { videoUrl: "VA0ReGkygFk" } });
+        navigate("/videoplayer", { state: { videoUrl: url } });
     };
 
     return (
