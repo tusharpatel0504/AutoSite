@@ -5,7 +5,7 @@ Autosite is a sleek, modern, and fully responsive landing page designed to showc
 <img width="1883" height="978" alt="image" src="https://github.com/user-attachments/assets/178daced-fa68-43ea-a358-6ddc6dc4d73e" />
 *(Replace the placeholder above with a screenshot of your application)*
 
-**Live Demo:** [your-live-demo-url.com](https://autosite.co.in)
+**Live Demo:** [autosite.co.in](https://autosite.co.in)
 
 ---
 
