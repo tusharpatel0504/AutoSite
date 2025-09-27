@@ -21,8 +21,8 @@ const projects = [
     borderColor: "border-[#2E2E2E]",
   },
   {
-    id: "Customer Support AI",
-    title: "Customer Support AI",
+    id: "Custom Support AI",
+    title: "Custom Support AI",
     subtitle: "Enhance customer experience with intelligent support systems that understand context and provide personalized solutions.",
     image: "/CustomER Support.png",
     borderColor: "border-[#2E2E2E]",
@@ -34,7 +34,7 @@ export default function RecentProjects() {
   const navigate = useNavigate(); // Initialize navigate
 
   return (
-    <div className="relative min-h-screen bg-black text-white flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 overflow-hidden pt-24">
+    <div className="relative min-h-screen bg-black text-white flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 overflow-hidden">
       {/* Meteor Shower + Beams */}
     
       {/* Grid Background */}
@@ -44,6 +44,7 @@ export default function RecentProjects() {
           "[background-size:40px_40px]",
           "[background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)]",
           "dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]",
+          "[mask-image:linear-gradient(to_bottom,transparent,white_20%)]"
         )}
       />
 
@@ -71,7 +72,7 @@ export default function RecentProjects() {
             60% 60%,
             60% 60%,
             60% 60%,
-            80% 40%
+            80% 10%
           `,
         }}
       />

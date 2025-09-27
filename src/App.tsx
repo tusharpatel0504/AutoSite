@@ -10,6 +10,7 @@ import Chatbot from './components/Chatbot';
 import WorkflowPage from './components/WorkflowPage';
 import { DotBackgroundDemo } from './components/DotBackgroundDemo';
 import { Toaster } from './components/ui/toaster';
+import { VideoPlayerPage } from './components/Videopage';
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
         <Route path="/chatbot" element={<Chatbot />} />
         <Route path="/chatbot1" element={<DotBackgroundDemo />} />
         <Route path="/workflow" element={<WorkflowPage />} />
+        <Route path="/videoplayer" element={<VideoPlayerPage />} />
       </Routes>
      </div>
 

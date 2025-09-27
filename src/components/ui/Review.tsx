@@ -107,7 +107,9 @@ export default function Review() {
   }
 
   return (
-    <section className="relative py-20 overflow-hidden mt-20">
+    <section className="relative py-20 overflow-hidden">
+      {/* Vignette Effect */}
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,transparent_50%,black)] pointer-events-none"></div>
       <div className="max-w-6xl mx-auto px-4 relative">
         <h2 className="text-4xl sm:text-5xl font-extrabold text-white text-center mb-4">
           What Our Users Are Saying

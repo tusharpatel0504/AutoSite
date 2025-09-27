@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { cn } from "../lib/utils";
 import { InteractiveHoverButton } from "./ui/InteractiveHoverButton ";
 
@@ -54,16 +55,18 @@ const chatbots = [
 const ipadMockup = "/apple-ipad-air-4-medium.png";
 
 export function DotBackgroundDemo() {
-	useEffect(() => {
-		window.scrollTo({ top: 0, behavior: "smooth" });
-	}, []);
+    const navigate = useNavigate();
 
-	const handleDemoClick = (url: string) => {
-		window.open(url, "_blank");
-	};
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
 
-	return (
-		<div className="relative min-h-screen w-full bg-black flex flex-col items-center justify-center overflow-hidden">
+    const handleDemoClick = (url: string) => {
+        navigate("/videoplayer", { state: { videoUrl: "VA0ReGkygFk" } });
+    };
+
+    return (
+        <div className="relative min-h-screen w-full bg-black flex flex-col items-center justify-center overflow-hidden">
 			{/* Dot Pattern Background */}
 			<div
 				className={cn(

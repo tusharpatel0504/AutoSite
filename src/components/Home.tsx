@@ -3,9 +3,9 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Review from "./ui/Review";
 import ReplyRates from "./ui/ReplyRates";
 import LogoCloud from "./ui/LogoCloud";
-import { GridBackground } from "./ui/GridBackground";
 import Services from "./Services";
-
+import { cn } from "../lib/utils";
+import { GridBackground } from "./ui/GridBackground";
 
 export default function Home() {
   const location = useLocation();
@@ -32,31 +32,34 @@ export default function Home() {
   }, [location, navigate]);
 
   return (
-    <main id="home" className="min-h-screen text-white">
-      
-      <GridBackground />
+    <main id="home" className="relative min-h-screen text-white">
+      <div
+        className={cn(
+          "absolute inset-0 -z-10",
+          "[background-size:40px_40px]",
+          "[background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)]",
+          "dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]",
+          "[mask-image:linear-gradient(to_bottom,white_50%,transparent_100%)]"
+        )}
+      />
+      <GridBackground/>
       <section
         id="services"
         className="
-  -mt-16 -mb-8
-  sm:-mt-40 sm:-mb-20
-  md:-mt-24 md:-mb-12
-  lg:-mt-28 lg:-mb-14
-  xl:-mt-32 xl:-mb-16
 "
       >
         <Services />
       </section>
 
-      <section id="testimonials" className="-pt-20">
+      <section id="testimonials">
         <Review />
       </section>
 
-      <section id="replyrates" className="-pt-20">
-        <ReplyRates />
+      <section id="replyrates">
+        {/* <ReplyRates /> */}
       </section>
 
-      <section id="features" className="-mt-40">
+      <section id="features" className="-mt-20">
         <LogoCloud />
       </section>
     </main>

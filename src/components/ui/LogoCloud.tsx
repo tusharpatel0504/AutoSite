@@ -1,4 +1,5 @@
 import { SparklesCore } from "../ui/Sparkles";
+import { cn } from "../../lib/utils";
 import { InteractiveHoverButton } from "../ui/InteractiveHoverButton ";
 import { Counter } from "./Counter";
 
@@ -18,6 +19,9 @@ export default function Page() {
 
   return (
     <div className="min-h-screen w-full overflow-hidden bg-transparent relative">
+        {/* Grid Background */}
+      
+      
       {/* Make grid background non-interactive and behind content */}
       {/*  */}
       <div className="mx-auto mt-48 w-full max-w-4xl px-4">
@@ -68,6 +72,7 @@ export default function Page() {
           Book appointment
         </InteractiveHoverButton>
       </div>
+      
     </div>
   );
 }

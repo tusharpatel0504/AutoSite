@@ -9,10 +9,10 @@
 }
 body {
   background-color: #000;
-  background-image:
+  /* background-image:
     linear-gradient(to right, #44444477 1px, transparent 1px),
     linear-gradient(to bottom, #44444477 1px, transparent 1px);
-  background-size: 40px 40px;
+  background-size: 40px 40px; */
   scroll-behavior: smooth; /* Add this line */
 }
 
