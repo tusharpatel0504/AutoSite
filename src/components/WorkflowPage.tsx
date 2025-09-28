@@ -32,7 +32,7 @@ const chatbots = [
       "Extact high quality leads",
       "Autoreply to customer queries on email",
     ],
-    demoUrl: "https://res.cloudinary.com/dasdeglju/video/upload/v1758727204/workflowvid2_sk70nh.mp4",
+    demoUrl: "cLZ65w_DkHM",
     video: gmailimg,
   },
   {
