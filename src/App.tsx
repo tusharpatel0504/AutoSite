@@ -1,6 +1,7 @@
 import './App.css';
 
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 import Navbar from './components/Navbar';
 import Footer from './components/ui/Footer';
@@ -12,24 +13,38 @@ import { DotBackgroundDemo } from './components/DotBackgroundDemo';
 import { Toaster } from './components/ui/toaster';
 import { VideoPlayerPage } from './components/Videopage';
 
+const GA_ID = 'G-QNF2VCFNQW';
+
+function sendPageView(pathname: string) {
+  if (typeof window === 'undefined') return;
+  // safe-call gtag if loaded
+  (window as any).gtag?.('config', GA_ID, { page_path: pathname });
+}
+
 export default function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    sendPageView(location.pathname + location.search);
+  }, [location]);
+
   return (
     <>
       <Navbar />
 
-     <div>
-      
-       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/chatbot" element={<Chatbot />} />
-        <Route path="/chatbot1" element={<DotBackgroundDemo />} />
-        <Route path="/workflow" element={<WorkflowPage />} />
-        <Route path="/videoplayer" element={<VideoPlayerPage />} />
-      </Routes>
-     </div>
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/chatbot" element={<Chatbot />} />
+          <Route path="/chatbot1" element={<DotBackgroundDemo />} />
+          <Route path="/workflow" element={<WorkflowPage />} />
+          <Route path="/videoplayer" element={<VideoPlayerPage />} />
+          {/* fallback for unknown routes */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </div>
 
       <Footer />
       <Toaster />
