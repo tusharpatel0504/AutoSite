@@ -1,4 +1,4 @@
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
@@ -36,19 +36,19 @@ export default function Footer() {
               Transforming businesses with intelligent AI solutions, automation, and cutting-edge technology.
             </p>
             <div className="flex gap-6 mt-4 text-xl">
-              <a href="#" aria-label="Facebook"><FaFacebookF /></a>
-              <a href="#" aria-label="Twitter"><FaTwitter /></a>
-              <a href="#" aria-label="LinkedIn"><FaLinkedinIn /></a>
-              <a href="" aria-label="Instagram"><FaInstagram /></a>
+              <a href="https://x.com/AutoSite_ai" aria-label="Twitter/X" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+              <a href="https://www.linkedin.com/company/autosite-ai" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
+              <a href="https://www.instagram.com/autosite.ai/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
             </div>
           </div>
           {/* Services */}
           <div>
             <h3 className="text-lg font-bold text-white mb-4">Services</h3>
             <ul className="space-y-3">
-              <li><Link to="/chatbot1" className="hover:text-white transition">Chatbot Development</Link></li>
+              <li><Link to="/chatbot" className="hover:text-white transition">AI Chatbot Solutions</Link></li>
+              <li><Link to="/chatbot1" className="hover:text-white transition">Custom Chatbot Development</Link></li>
               <li><Link to="/workflow" className="hover:text-white transition">Workflow Automation</Link></li>
-              <li><Link to="https://calendly.com/guptaritik67856/30min?month=2025-09" className="hover:text-white transition">Customer Support AI</Link></li>
+              <li><Link to="/services" className="hover:text-white transition">All Services</Link></li>
             </ul>
           </div>
           {/* Company */}
@@ -70,7 +70,7 @@ export default function Footer() {
                   className="hover:text-white transition"
                   onClick={(e) => handleFooterNav(e, "services")}
                 >
-                  Service
+                  Services
                 </a>
               </li>
               <li>
@@ -79,11 +79,11 @@ export default function Footer() {
                   className="hover:text-white transition"
                   onClick={(e) => handleFooterNav(e, "testimonials")}
                 >
-                  Testimonial
+                  Testimonials
                 </a>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-white transition">Contact</Link>
+                <Link to="/contact" className="hover:text-white transition">Contact Us</Link>
               </li>
             </ul>
           </div>

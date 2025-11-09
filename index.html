@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- Preconnect to external domains for faster loading -->
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <link rel="preconnect" href="https://files.catbox.moe" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <link rel="preconnect" href="https://files.catbox.moe" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/LOGO.webp" as="image" type="image/webp" />
     
     <!-- Primary Meta Tags -->
-    <title>Autosite | AI Automation Agency</title>
-    <meta name="title" content="Autosite | AI Automation Agency" />
+    <title>AI Chatbot & Workflow Automation Agency | Autosite - Transform Your Business</title>
+    <meta name="title" content="AI Chatbot & Workflow Automation Agency | Autosite" />
     <meta name="description" content="Autosite builds advanced AI chatbots, automations, and workflows that power websites, CRMs, and marketing systems — helping businesses scale efficiently." />
     <meta name="author" content="Autosite Agency" />
     <meta name="keywords" content="AI automation, chatbot, workflow automation, CRM automation, AI agency, business automation, marketing automation" />
@@ -59,7 +63,8 @@
       "logo": "https://files.catbox.moe/gbbh4o.png",
       "description": "Autosite builds AI chatbots, automations, and marketing systems to streamline business operations.",
       "sameAs": [
-        "https://www.linkedin.com/company/106765275/",
+        "https://www.linkedin.com/company/autosite-ai",
+        "https://x.com/AutoSite_ai",
         "https://www.instagram.com/autosite.ai/"
       ],
       "contactPoint": {
@@ -81,6 +86,46 @@
         "target": "https://autosite.co.in/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema for Better Navigation Structure -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://autosite.co.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://autosite.co.in/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AI Chatbot",
+          "item": "https://autosite.co.in/chatbot"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Workflow Automation",
+          "item": "https://autosite.co.in/workflow"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Contact",
+          "item": "https://autosite.co.in/contact"
+        }
+      ]
     }
     </script>
   </body>

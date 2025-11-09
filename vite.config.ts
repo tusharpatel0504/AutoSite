@@ -7,6 +7,8 @@ export default defineConfig({
   build: {
     // Use esbuild for faster minification (built-in with Vite)
     minify: 'esbuild',
+    // Target modern browsers for smaller bundle
+    target: 'es2020',
     // Optimize chunk size
     rollupOptions: {
       output: {
@@ -14,6 +16,7 @@ export default defineConfig({
           // Split vendor chunks for better caching
           'react-vendor': ['react', 'react-dom', 'react-router-dom'],
           'ui-vendor': ['lucide-react', 'react-icons'],
+          'form-vendor': ['react-hook-form'],
         },
       },
     },
@@ -21,9 +24,16 @@ export default defineConfig({
     chunkSizeWarningLimit: 1000,
     // Enable CSS code splitting
     cssCodeSplit: true,
+    // Smaller source maps for production
+    sourcemap: false,
   },
   // Optimize dependencies
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom'],
+  },
+  // Enable performance hints
+  esbuild: {
+    legalComments: 'none',
+    treeShaking: true,
   },
 })

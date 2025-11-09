@@ -25,18 +25,18 @@ export function GridBackground() {
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
       <div className="relative z-20 text-center max-w-2xl mx-auto mt-2">
         <h1 className="text-4xl sm:text-6xl font-extrabold mb-4 text-white">
-          Building Advanced AI Chatbots for Startups
+          Building Advanced AI Chatbots & Automation Solutions
         </h1>
         <p className="text-lg sm:text-xl text-white mb-6 font-medium leading-relaxed">
           Transform your business with intelligent automation, AI-powered chatbots, and seamless workflow solutions designed for the modern enterprise.
         </p>
          <div className="flex justify-center gap-4 mt-4">
-            <InteractiveHoverButton onClick={() => navigate("#services")}>Get Started</InteractiveHoverButton>
+            <InteractiveHoverButton onClick={() => navigate("/services")}>Explore Services</InteractiveHoverButton>
             <button
             onClick={handleLearnMoreClick}
             className="px-6 py-2 rounded-3xl bg-white text-black dark:bg-black dark:text-white border font-semibold transition-colors duration-300 hover:bg-zinc-200 dark:hover:bg-zinc-700"
           >
-            Learn More
+            Book a Demo
           </button>
           </div>
          
