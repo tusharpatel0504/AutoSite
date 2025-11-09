@@ -1,0 +1,9 @@
+# Robots.txt for Autosite
+User-agent: *
+Allow: /
+
+# Disallow admin or sensitive paths (if any)
+# Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://autosite.co.in/sitemap.xml

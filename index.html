@@ -4,9 +4,39 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="LOGO.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Autosite</title>
+    
+    <!-- Preconnect to external domains for faster loading -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://files.catbox.moe" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    
+    <!-- Primary Meta Tags -->
+    <title>Autosite | AI Automation Agency</title>
+    <meta name="title" content="Autosite | AI Automation Agency" />
+    <meta name="description" content="Autosite builds advanced AI chatbots, automations, and workflows that power websites, CRMs, and marketing systems — helping businesses scale efficiently." />
+    <meta name="author" content="Autosite Agency" />
+    <meta name="keywords" content="AI automation, chatbot, workflow automation, CRM automation, AI agency, business automation, marketing automation" />
 
-    <!-- Google Analytics (gtag.js) -->
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://autosite.co.in/" />
+    <meta property="og:title" content="Autosite - AI Automation Agency" />
+    <meta property="og:description" content="Autosite builds AI chatbots and automations that enhance website performance, sales, and customer engagement." />
+    <meta property="og:image" content="https://files.catbox.moe/gbbh4o.png" />
+    <meta property="og:site_name" content="Autosite" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://autosite.co.in/" />
+    <meta name="twitter:title" content="Autosite - AI Automation Agency" />
+    <meta name="twitter:description" content="Autosite builds AI chatbots and automations that enhance website performance, sales, and customer engagement." />
+    <meta name="twitter:image" content="https://files.catbox.moe/gbbh4o.png" />
+    <meta name="twitter:site" content="@autosite" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://autosite.co.in/" />
+
+    <!-- Google Analytics (gtag.js) - Async Loading -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QNF2VCFNQW"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -16,7 +46,42 @@
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"></div>     
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- JSON-LD Structured Data - Moved to bottom for better performance -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Autosite",
+      "url": "https://autosite.co.in",
+      "logo": "https://files.catbox.moe/gbbh4o.png",
+      "description": "Autosite builds AI chatbots, automations, and marketing systems to streamline business operations.",
+      "sameAs": [
+        "https://www.linkedin.com/company/106765275/",
+        "https://www.instagram.com/autosite.ai/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "url": "https://autosite.co.in/contact"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Autosite",
+      "url": "https://autosite.co.in",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://autosite.co.in/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
   </body>
 </html>
