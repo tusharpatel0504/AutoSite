@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="LOGO.webp" />
+    <link rel="icon" type="image/webp" href="/LOGO.webp" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/LOGO.webp" />
+    <link rel="icon" type="image/webp" sizes="32x32" href="/LOGO.webp" />
+    <link rel="icon" type="image/webp" sizes="16x16" href="/LOGO.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- Preconnect to external domains for faster loading -->
@@ -24,17 +27,22 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://autosite.co.in/" />
-    <meta property="og:title" content="Autosite - AI Automation Agency" />
-    <meta property="og:description" content="Autosite builds AI chatbots and automations that enhance website performance, sales, and customer engagement." />
-    <meta property="og:image" content="https://files.catbox.moe/gbbh4o.png" />
+    <meta property="og:title" content="Autosite - AI Chatbot & Workflow Automation Agency" />
+    <meta property="og:description" content="Autosite builds advanced AI chatbots, automations, and workflows that power websites, CRMs, and marketing systems — helping businesses scale efficiently." />
+    <meta property="og:image" content="https://autosite.co.in/LOGO.webp" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Autosite AI Automation Agency Logo" />
     <meta property="og:site_name" content="Autosite" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://autosite.co.in/" />
-    <meta name="twitter:title" content="Autosite - AI Automation Agency" />
-    <meta name="twitter:description" content="Autosite builds AI chatbots and automations that enhance website performance, sales, and customer engagement." />
-    <meta name="twitter:image" content="https://files.catbox.moe/gbbh4o.png" />
+    <meta name="twitter:title" content="Autosite - AI Chatbot & Workflow Automation Agency" />
+    <meta name="twitter:description" content="Autosite builds advanced AI chatbots, automations, and workflows that power websites, CRMs, and marketing systems — helping businesses scale efficiently." />
+    <meta name="twitter:image" content="https://autosite.co.in/LOGO.webp" />
+    <meta name="twitter:image:alt" content="Autosite AI Automation Agency Logo" />
     <meta name="twitter:site" content="@autosite" />
 
     <!-- Canonical URL -->
@@ -59,9 +67,16 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Autosite",
+      "alternateName": "Autosite AI Agency",
       "url": "https://autosite.co.in",
-      "logo": "https://files.catbox.moe/gbbh4o.png",
-      "description": "Autosite builds AI chatbots, automations, and marketing systems to streamline business operations.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://autosite.co.in/LOGO.webp",
+        "width": "600",
+        "height": "600"
+      },
+      "image": "https://autosite.co.in/LOGO.webp",
+      "description": "Autosite builds advanced AI chatbots, automations, and workflows that power websites, CRMs, and marketing systems — helping businesses scale efficiently.",
       "sameAs": [
         "https://www.linkedin.com/company/autosite-ai",
         "https://x.com/AutoSite_ai",
@@ -70,7 +85,12 @@
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "Customer Service",
+        "email": "contact@autosite.co.in",
         "url": "https://autosite.co.in/contact"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
       }
     }
     </script>
@@ -86,6 +106,25 @@
         "target": "https://autosite.co.in/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
+    }
+    </script>
+
+    <!-- ProfessionalService Schema for Business Categorization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Autosite - AI Automation Agency",
+      "image": "https://autosite.co.in/LOGO.webp",
+      "description": "Professional AI chatbot development and workflow automation services for businesses looking to scale efficiently.",
+      "url": "https://autosite.co.in",
+      "telephone": "+91-XXXXXXXXXX",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      },
+      "priceRange": "$$",
+      "serviceType": ["AI Automation", "Chatbot Development", "Workflow Automation", "CRM Integration"]
     }
     </script>
 
