@@ -1,16 +1,8 @@
 import { SparklesCore } from "../ui/Sparkles";
 
-import { InteractiveHoverButton } from "../ui/InteractiveHoverButton ";
 import { Counter } from "./Counter";
 
 export default function Page() {
-  const handleBookClick = () => {
-    window.open(
-      "https://calendly.com/guptaritik67856/30min?month=2025-09",
-      "_blank"
-    );
-  };
-
   const stats = [
     { value: 30, label: "Projects Delivered", suffix: "+" },
     { value: 70, label: "Happy Clients", suffix: "+" },
