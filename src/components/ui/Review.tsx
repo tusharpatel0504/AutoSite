@@ -7,6 +7,7 @@ const reviews = [
     role: "Founder",
     company: "Mercato Agency",
     initials: "SJ",
+    imageUrl: "https://cgahzcwiqcblmkwblqaj.supabase.co/storage/v1/object/public/autosite%20data/suyash.png",
     stars: 5,
   },
   {
@@ -15,14 +16,16 @@ const reviews = [
     role: "Founder & CEO",
     company: "Clutch.co",
     initials: "MB",
+    imageUrl: "https://cgahzcwiqcblmkwblqaj.supabase.co/storage/v1/object/public/autosite%20data/Clutch.co.jpg",
     stars: 5,
   },
   {
     text: "Their fashion industry chatbot understands our customers' needs perfectly. Sales conversions have increased by 40% since implementation.",
-    name: "Puneet Anil Sehgal",
+    name: "Shaan Shah",
     role: "Co-Founder",
-    company: "Freakins",
+    company: "FREAKINS",
     initials: "PS",
+    imageUrl: "https://cgahzcwiqcblmkwblqaj.supabase.co/storage/v1/object/public/autosite%20data/Freakins.jpg",
     stars: 5,
   },
   {
@@ -31,6 +34,7 @@ const reviews = [
     role: "CEO",
     company: "sellular",
     initials: "TK",
+    imageUrl: "https://cgahzcwiqcblmkwblqaj.supabase.co/storage/v1/object/public/autosite%20data/sellular.jpg",
     stars: 5,
   },
   {
@@ -39,72 +43,23 @@ const reviews = [
     role: "Founder",
     company: "Identityforgestidio",
     initials: "KS",
+    imageUrl: "https://cgahzcwiqcblmkwblqaj.supabase.co/storage/v1/object/public/autosite%20data/kushagra.jpg",
+    stars: 5,
+  },
+  {
+    text: "The AI Chatbot you provided has transtraform the student engagement on our platform. It's like having a personal teacher available 24/7. also solve any doubt related to studies and courses purchase",
+    name: "Abhijeet Suman",
+    role: "Founder",
+    company: "siksha.store",
+    initials: "KS",
+    imageUrl: "https://cgahzcwiqcblmkwblqaj.supabase.co/storage/v1/object/public/ahhijeet/abhijeet.jpg",
     stars: 5,
   },
 ];
 
 export default function Review() {
-  const trackRef = useRef<HTMLDivElement | null>(null);
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const touchStartX = useRef<number | null>(null);
-
-  const [perPage, setPerPage] = useState<number>(() => {
-    const w = typeof window !== "undefined" ? window.innerWidth : 1200;
-    if (w >= 1024) return 3;
-    if (w >= 768) return 2;
-    return 1;
-  });
-  const totalPages = Math.max(1, Math.ceil(reviews.length / perPage));
-  void totalPages;
-  const [page, setPage] = useState(0);
-
-  useEffect(() => {
-    function onResize() {
-      const w = window.innerWidth;
-      const newPer = w >= 1024 ? 3 : w >= 768 ? 2 : 1;
-      setPerPage(newPer);
-    }
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, []);
-
-  // ensure page is valid when perPage changes
-  useEffect(() => {
-    const newTotal = Math.max(1, Math.ceil(reviews.length / perPage));
-    if (page >= newTotal) setPage(0);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [perPage]);
-
-  const goNext = () =>
-    setPage((p) => (p + 1) % Math.max(1, Math.ceil(reviews.length / perPage)));
-  const goPrev = () =>
-    setPage(
-      (p) =>
-        (p - 1 + Math.max(1, Math.ceil(reviews.length / perPage))) %
-        Math.max(1, Math.ceil(reviews.length / perPage))
-    );
-
-  const startIndex = page * perPage;
-  const visible = Array.from({ length: perPage }).map((_, i) => reviews[(startIndex + i) % reviews.length]);
-
-  function onKeyDown(e: React.KeyboardEvent) {
-    if (e.key === "ArrowLeft") goPrev();
-    if (e.key === "ArrowRight") goNext();
-  }
-
-  function handleTouchStart(e: React.TouchEvent) {
-    touchStartX.current = e.touches[0].clientX;
-  }
-  function handleTouchEnd(e: React.TouchEvent) {
-    if (touchStartX.current == null) return;
-    const endX = e.changedTouches[0].clientX;
-    const diff = touchStartX.current - endX;
-    if (Math.abs(diff) > 40) {
-      if (diff > 0) goNext();
-      else goPrev();
-    }
-    touchStartX.current = null;
-  }
+  const [isPaused, setIsPaused] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
     <section className="relative py-20 overflow-hidden">
@@ -114,108 +69,95 @@ export default function Review() {
         <h2 className="text-4xl sm:text-5xl font-extrabold text-white text-center mb-4">
           What Our Users Are Saying
         </h2>
-        <p className="text-lg text-gray-300 text-center mb-8">
+        <p className="text-lg text-gray-300 text-center mb-12">
           Don't just take our word for it. Here's what{" "}
           <span className="text-blue-400 font-semibold">real developers</span> are saying about{" "}
           <span className="text-blue-400 font-semibold">Autosite</span>
         </p>
 
-        <div className="flex items-center justify-center gap-3 mb-6">
-          <button
-            onClick={goPrev}
-            aria-label="Previous reviews"
-            className="bg-gray-800 hover:bg-gray-700 text-white px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        {/* Scrolling Container with Fade Effects */}
+        <div className="relative">
+          {/* Left Fade */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
+          
+          {/* Right Fade */}
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
+          
+          {/* Scrolling Track */}
+          <div 
+            ref={scrollRef}
+            className="overflow-hidden"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
           >
-            ←
-          </button>
-          <div className="text-sm text-gray-400">
-            Page {page + 1} / {Math.max(1, Math.ceil(reviews.length / perPage))}
-          </div>
-          <button
-            onClick={goNext}
-            aria-label="Next reviews"
-            className="bg-gray-800 hover:bg-gray-700 text-white px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            →
-          </button>
-        </div>
-
-        <div
-          ref={containerRef}
-          tabIndex={0}
-          onKeyDown={onKeyDown}
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-          aria-roledescription="carousel"
-          aria-label="Customer reviews"
-        >
-          <div
-            ref={trackRef}
-            className="grid gap-6"
-            style={{
-              gridTemplateColumns: `repeat(${perPage}, minmax(0, 1fr))`,
-            }}
-          >
-            {visible.map((review, idx) => (
-              <article
-                key={idx}
-                className="bg-[#18181b] rounded-xl border border-gray-800 p-6 flex flex-col justify-between shadow-lg transition-transform duration-300 hover:-translate-y-1 relative"
-                aria-label={`Review by ${review.name}`}
-              >
-                <div className="flex gap-1 text-yellow-400 mb-4" aria-hidden>
-                  {Array(review.stars)
-                    .fill(0)
-                    .map((_, i) => (
-                      <svg
-                        key={i}
-                        width="20"
-                        height="20"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        className="shrink-0"
-                      >
-                        <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z" />
-                      </svg>
-                    ))}
-                </div>
-                <p className="text-gray-200 text-lg mb-6 flex-grow">"{review.text}"</p>
-                <div className="flex items-center gap-4 mt-auto">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center text-white font-bold text-lg">
-                    {review.initials}
-                  </div>
-                  <div>
-                    <div className="text-white font-semibold">{review.name}</div>
-                    <div className="text-gray-400 text-sm">{review.role}</div>
-                    <div className="text-blue-400 text-sm font-medium">{review.company}</div>
-                  </div>
-                </div>
-                <svg
-                  className="absolute top-4 right-4 w-16 h-16 text-gray-700/50"
-                  fill="currentColor"
-                  viewBox="0 0 32 32"
-                  aria-hidden="true"
+            <div className={`flex gap-6 animate-scroll ${isPaused ? 'paused' : ''}`}>
+              {/* Duplicate reviews for infinite scroll effect */}
+              {[...reviews, ...reviews].map((review, idx) => (
+                <article
+                  key={idx}
+                  className="relative bg-[#18181b] rounded-xl p-6 flex-shrink-0 w-[400px] shadow-lg transition-transform duration-300 overflow-hidden"
+                  aria-label={`Review by ${review.name}`}
                 >
-                  <path d="M9.333 22.667C7.333 22.667 5.667 21 5.667 19V13C5.667 11 7.333 9.333 9.333 9.333H14L12.333 14.667H9.333V19H12.333L14 22.667H9.333ZM22.667 22.667C20.667 22.667 19 21 19 19V13C19 11 20.667 9.333 22.667 9.333H27.333L25.667 14.667H22.667V19H25.667L27.333 22.667H22.667Z" />
-                </svg>
-              </article>
-            ))}
+                  {/* Animated border */}
+                  <div className="absolute inset-0 rounded-xl pointer-events-none">
+                    <div className="absolute inset-0 rounded-xl border border-gray-700"></div>
+                    <div className="absolute inset-0 rounded-xl border border-gray-400 animate-border-glow"></div>
+                  </div>
+                  
+                  <div className="relative z-10">
+                    {/* Header with Image and Name */}
+                    <div className="flex items-center gap-4 mb-4">
+                      <img 
+                        src={review.imageUrl}
+                        alt={review.name}
+                        className="w-12 h-12 rounded-full object-cover flex-shrink-0"
+                      />
+                      <div className="flex-1">
+                        <div className="text-white font-semibold">{review.name}</div>
+                        <div className="text-gray-400 text-sm">{review.role}</div>
+                        <div className="text-blue-400 text-sm font-medium">{review.company}</div>
+                      </div>
+                    </div>
+                    
+                    {/* Description */}
+                    <p className="text-gray-200 text-base leading-relaxed">"{review.text}"</p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-
-        <div className="flex items-center justify-center gap-2 mt-6" role="tablist" aria-label="Review pages">
-          {Array.from({ length: Math.max(1, Math.ceil(reviews.length / perPage)) }).map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setPage(i)}
-              aria-label={`Go to page ${i + 1}`}
-              aria-pressed={i === page}
-              className={`w-3 h-3 rounded-full transition-all ${
-                i === page ? "bg-blue-500" : "bg-gray-700 hover:bg-gray-600"
-              }`}
-            />
-          ))}
         </div>
       </div>
+      
+      {/* Animations */}
+      <style>{`
+        @keyframes borderGlow {
+          0%, 100% {
+            opacity: 0.3;
+          }
+          50% {
+            opacity: 1;
+          }
+        }
+        .animate-border-glow {
+          animation: borderGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .animate-scroll {
+          animation: scroll 30s linear infinite;
+        }
+        .paused {
+          animation-play-state: paused;
+        }
+      `}</style>
     </section>
   );
 }

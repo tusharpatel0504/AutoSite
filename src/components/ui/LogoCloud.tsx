@@ -35,13 +35,19 @@ export default function Page() {
           </span>
         </div>
 
-        {/* Stats Section with Gray Background */}
-        <div className="bg-[#1a1a1a] rounded-2xl py-12 px-12">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 text-center">
+        {/* Stats Section with Gray Background and Animated Border */}
+        <div className="relative bg-[#1a1a1a] rounded-2xl py-12 px-12 overflow-hidden">
+          {/* Animated border */}
+          <div className="absolute inset-0 rounded-2xl pointer-events-none">
+            <div className="absolute inset-0 rounded-2xl border border-gray-700"></div>
+            <div className="absolute inset-0 rounded-2xl border border-gray-400 animate-border-glow"></div>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 text-center relative z-10">
             {stats.map((stat, index) => (
               <div key={index} className="flex flex-col items-center">
                 {/* Number box */}
-                <div className="bg-white text-black font-bold text-3xl sm:text-4xl px-4 py-4 rounded-md mb-4 min-w-[120px] text-center">
+                <div className="bg-black border-2 border-gray-700 text-white font-bold text-3xl sm:text-4xl px-4 py-4 rounded-md mb-4 min-w-[120px] text-center">
                   <Counter end={stat.value} suffix={stat.suffix} />
                 </div>
 
@@ -54,6 +60,21 @@ export default function Page() {
             ))}
           </div>
         </div>
+        
+        {/* Border Animation Styles */}
+        <style>{`
+          @keyframes borderGlow {
+            0%, 100% {
+              opacity: 0.3;
+            }
+            50% {
+              opacity: 1;
+            }
+          }
+          .animate-border-glow {
+            animation: borderGlow 3s ease-in-out infinite;
+          }
+        `}</style>
       </div>
 
       {/* Background & Effects */}
@@ -64,13 +85,6 @@ export default function Page() {
           particleDensity={300}
           className="absolute inset-x-0 bottom-0 h-full w-full [mask-image:radial-gradient(50%_50%,white,transparent_85%)]"
         />
-      </div>
-
-      {/* CTA Button */}
-      <div className="flex justify-center mb-20 -mt-24 relative z-30">
-        <InteractiveHoverButton onClick={handleBookClick}>
-          Book appointment
-        </InteractiveHoverButton>
       </div>
       
     </div>

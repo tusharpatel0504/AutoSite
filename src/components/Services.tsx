@@ -24,7 +24,7 @@ const projects = [
     id: "Custom Support AI",
     title: "Custom Support AI",
     subtitle: "Enhance customer experience with intelligent support systems that understand context and provide personalized solutions.",
-    image: "/CustomER Support.png",
+    image: "/CustomER Support.jpg",
     borderColor: "border-[#2E2E2E]",
   },
 ];
@@ -115,11 +115,17 @@ export default function RecentProjects() {
                     window.open("https://calendly.com/guptaritik67856/30min?month=2025-09", "_blank"); // Navigate to external link
                   }
                 }}
-                className="flex items-center justify-between bg-[#111] rounded-xl p-3 sm:p-4 md:p-5 hover:bg-[#1a1a1a] transition cursor-pointer"
+                className="relative flex items-center justify-between bg-[#111] rounded-xl p-3 sm:p-4 md:p-5 hover:bg-[#1a1a1a] transition cursor-pointer overflow-hidden"
               >
+                {/* Animated border */}
+                <div className="absolute inset-0 rounded-xl pointer-events-none">
+                  <div className="absolute inset-0 rounded-xl border border-gray-700"></div>
+                  <div className="absolute inset-0 rounded-xl border border-gray-400 animate-border-glow"></div>
+                </div>
+                
                 {/* Thumbnail */}
                 <div
-                  className={`w-14 h-16 sm:w-16 sm:h-14 md:w-20 md:h-20 overflow-hidden rounded-lg border-2 ${project.borderColor}`}
+                  className={`relative z-10 w-14 h-16 sm:w-16 sm:h-14 md:w-20 md:h-20 overflow-hidden rounded-lg border-2 ${project.borderColor}`}
                 >
                   <img
                     src={project.image}
@@ -129,7 +135,7 @@ export default function RecentProjects() {
                 </div>
 
                 {/* Text */}
-                <div className="flex-1 px-2 sm:px-4">
+                <div className="relative z-10 flex-1 px-2 sm:px-4">
                   <h4 className="font-bold text-base sm:text-lg md:text-xl">
                     {project.title}
                   </h4>
@@ -139,7 +145,7 @@ export default function RecentProjects() {
                 </div>
 
                 {/* Icon */}
-                <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 flex-shrink-0" />
+                <ArrowUpRight className="relative z-10 w-4 h-4 sm:w-5 sm:h-5 text-orange-500 flex-shrink-0 animate-arrow-bounce" />
               </div>
             ))}
           </div>
@@ -163,6 +169,28 @@ export default function RecentProjects() {
         }
         .animate-meteor {
           animation: meteor 2.5s linear infinite;
+        }
+        @keyframes borderGlow {
+          0%, 100% {
+            opacity: 0.3;
+          }
+          50% {
+            opacity: 1;
+          }
+        }
+        .animate-border-glow {
+          animation: borderGlow 3s ease-in-out infinite;
+        }
+        @keyframes arrowBounce {
+          0%, 100% {
+            transform: translate(0, 0);
+          }
+          50% {
+            transform: translate(4px, -4px);
+          }
+        }
+        .animate-arrow-bounce {
+          animation: arrowBounce 1.5s ease-in-out infinite;
         }
       `}</style>
     </div>

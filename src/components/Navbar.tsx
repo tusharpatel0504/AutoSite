@@ -3,9 +3,11 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 const navLinks = [
   { name: "Home", to: "/" },
+  { name: "About", to: "/about" },
   { name: "Services", to: "#services" },
-  { name: "Testimonials", to: "#testimonials" },
   { name: "Contact", to: "/contact" },
+  // { name: "Testimonials", to: "#testimonials" },
+  { name: "Request Demo", to: "/demo" },
 ];
 
 const Navbar = () => {
@@ -50,6 +52,7 @@ const Navbar = () => {
   };
 
   return (
+    <>
     <nav className="fixed top-0 left-0 right-0 px-4 sm:px-8 md:px-12 py-4 md:py-6 bg-transparent backdrop-blur-sm z-50 flex items-center justify-between">
       {/* Left Section */}
       <div className="flex-1 flex justify-start">
@@ -89,9 +92,14 @@ const Navbar = () => {
           href={calendlyUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="px-6 py-2 rounded-3xl bg-white text-black dark:bg-black dark:text-white border font-semibold transition-colors duration-300 hover:bg-zinc-200 dark:hover:bg-zinc-700"
+          className="relative px-6 py-2 rounded-3xl bg-white text-black dark:bg-black dark:text-white font-semibold transition-colors duration-300 hover:bg-zinc-200 dark:hover:bg-zinc-700 overflow-hidden"
         >
-          Book Appointment
+          {/* Animated border */}
+          <div className="absolute inset-0 rounded-3xl pointer-events-none">
+            <div className="absolute inset-0 rounded-3xl border border-gray-600"></div>
+            <div className="absolute inset-0 rounded-3xl border-2 border-white dark:border-gray-300 animate-border-pulse"></div>
+          </div>
+          <span className="relative z-10">Book Appointment</span>
         </a>
       </div>
 
@@ -136,6 +144,24 @@ const Navbar = () => {
         </ul>
       </div>
     </nav>
+    
+    {/* Animations */}
+    <style>{`
+      @keyframes borderPulse {
+        0%, 100% {
+          opacity: 0.3;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.02);
+        }
+      }
+      .animate-border-pulse {
+        animation: borderPulse 2s ease-in-out infinite;
+      }
+    `}</style>
+    </>
   );
 };
 

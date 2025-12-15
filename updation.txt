@@ -1,8 +1,13 @@
-website logo -> kuch kar nahi sakte
-description and proper heading -> 
-remove star and add image
-FAQs
-animated video
-demo(personlise demo request)
-our-processabo  ut
+website logo -> Done
+description and proper heading -> Done
+demo(personlise demo request) ->Done
+About section -> Done
+FAQs -> Done
+our-process to integrate  -> Done
+Integration tool -> Done
+change chatbot image -> Done
+remove star and add image -> Done
+feature of chatbot in chabtot section -> Done
+Privacy 
 update why choose us
+animated video

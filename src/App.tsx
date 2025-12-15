@@ -7,11 +7,13 @@ import Navbar from './components/Navbar';
 import Footer from './components/ui/Footer';
 import Contact from './components/Contact';
 import Home from './components/Home';
-import Chatbot from './components/Chatbot';
+// import Chatbot from './components/Chatbot';
 import WorkflowPage from './components/WorkflowPage';
 import { DotBackgroundDemo } from './components/DotBackgroundDemo';
 import { Toaster } from './components/ui/toaster';
 import { VideoPlayerPage } from './components/Videopage';
+import Demo from './components/Demo';
+import About from './components/About';
 
 const GA_ID = 'G-QNF2VCFNQW';
 
@@ -36,8 +38,10 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/chatbot" element={<Chatbot />} />
+          <Route path="/demo" element={<Demo />} />
+          {/* <Route path="/chatbot" element={<Chatbot />} /> */}
           <Route path="/chatbot1" element={<DotBackgroundDemo />} />
           <Route path="/workflow" element={<WorkflowPage />} />
           <Route path="/videoplayer" element={<VideoPlayerPage />} />

@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Review from "./ui/Review";
-
+import FAQ from "./FAQ";
+import IntegrationSteps from "./IntegrationSteps";
 import LogoCloud from "./ui/LogoCloud";
 import Services from "./Services";
 import { cn } from "../lib/utils";
@@ -51,6 +52,10 @@ export default function Home() {
         <Services />
       </section>
 
+      <section id="integration-steps">
+        <IntegrationSteps />
+      </section>
+
       <section id="testimonials">
         <Review />
       </section>
@@ -61,6 +66,10 @@ export default function Home() {
 
       <section id="features" className="-mt-20">
         <LogoCloud />
+      </section>
+
+      <section id="faq">
+        <FAQ />
       </section>
     </main>
   );
