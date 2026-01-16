@@ -55,24 +55,6 @@ const About = () => {
     },
   ];
 
-  const values = [
-    {
-      icon: "✨",
-      title: "Simple Solutions",
-      description: "We make AI easy to use for everyone",
-    },
-    {
-      icon: "🤝",
-      title: "Customer First",
-      description: "Your success is our success",
-    },
-    {
-      icon: "🎯",
-      title: "Real Results",
-      description: "We focus on outcomes that matter to your business",
-    },
-  ];
-
   return (
     <section className="min-h-screen py-20 px-4 sm:px-6 md:px-8 relative overflow-hidden bg-black">
       {/* Background Decorations */}
