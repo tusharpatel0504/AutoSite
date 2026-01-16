@@ -14,6 +14,8 @@ import { Toaster } from './components/ui/toaster';
 import { VideoPlayerPage } from './components/Videopage';
 import Demo from './components/Demo';
 import About from './components/About';
+import Pricing from './components/Pricing';
+import CustomCursor from './components/CustomCursor';
 
 const GA_ID = 'G-QNF2VCFNQW';
 
@@ -32,6 +34,7 @@ export default function App() {
 
   return (
     <>
+      <CustomCursor />
       <Navbar />
 
       <div>
@@ -41,6 +44,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/demo" element={<Demo />} />
+          <Route path="/pricing" element={<Pricing />} />
           {/* <Route path="/chatbot" element={<Chatbot />} /> */}
           <Route path="/chatbot1" element={<DotBackgroundDemo />} />
           <Route path="/workflow" element={<WorkflowPage />} />

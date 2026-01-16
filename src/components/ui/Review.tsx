@@ -152,7 +152,7 @@ export default function Review() {
           }
         }
         .animate-scroll {
-          animation: scroll 30s linear infinite;
+          animation: scroll 4s linear infinite;
         }
         .paused {
           animation-play-state: paused;

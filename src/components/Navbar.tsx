@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { name: "Home", to: "/" },
+  // { name: "Home", to: "/" },
   { name: "About", to: "/about" },
   { name: "Services", to: "#services" },
   { name: "Contact", to: "/contact" },
-  // { name: "Testimonials", to: "#testimonials" },
   { name: "Request Demo", to: "/demo" },
+  { name: "Pricing", to: "/pricing" },
 ];
 
 const Navbar = () => {

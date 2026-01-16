@@ -71,7 +71,7 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 md:px-8 relative overflow-hidden bg-black">
+    <section className="py-12 sm:py-20 px-4 sm:px-6 md:px-8 relative overflow-hidden bg-black">
       {/* Grid Background */}
       <div className="absolute inset-0 [background-size:40px_40px] [background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(#262626_1px,transparent_1px)] pointer-events-none"></div>
       
@@ -83,10 +83,10 @@ const FAQ = () => {
       <div className="absolute bottom-20 right-10 w-40 h-40 sm:w-64 sm:h-64 bg-white/5 rounded-full blur-3xl"></div>
 
       <div className="container mx-auto max-w-6xl relative z-10">
-        <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center mb-3 sm:mb-4">
           Frequently Asked Questions
         </h2>
-        <p className="text-gray-300 text-center mb-12 text-lg max-w-3xl mx-auto">
+        <p className="text-gray-300 text-center mb-8 sm:mb-12 text-sm sm:text-base md:text-lg max-w-3xl mx-auto">
           Got questions? We've got answers. Here's everything you need to know about Autosite.
         </p>
 
@@ -96,10 +96,10 @@ const FAQ = () => {
               <div className="group">
                 <button
                   onClick={() => toggleFaq(index)}
-                  className="w-full flex items-center justify-between py-6 text-left transition-all duration-300"
+                  className="w-full flex items-center justify-between py-4 sm:py-6 text-left transition-all duration-300"
                 >
-                  <div className="flex items-center gap-4 flex-1">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center bg-black border-2 border-gray-700">
+                  <div className="flex items-center gap-2 sm:gap-4 flex-1">
+                    <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center bg-black border-2 border-gray-700">
                       <span className={`text-sm font-bold text-white transition-all duration-500 inline-block ${
                         openFaq === index ? 'rotate-180' : 'rotate-0'
                       }`}>
@@ -107,17 +107,16 @@ const FAQ = () => {
                       </span>
                     </div>
                     <h3 
-                      className="text-white pr-4 group-hover:text-gray-200 transition-colors"
+                      className="text-white pr-4 group-hover:text-gray-200 transition-colors text-sm sm:text-base md:text-lg"
                       style={{
-                        fontSize: '1.10rem',
-                        lineHeight: '1.0rem',
+                        lineHeight: '1.6',
                         fontWeight: 370
                       }}
                     >
                       {faq.question}
                     </h3>
                   </div>
-                  <div className={`flex-shrink-0 w-8 h-8 rounded-full border-2 border-gray-700 flex items-center justify-center transition-all duration-300 ${
+                  <div className={`flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-gray-700 flex items-center justify-center transition-all duration-300 ${
                     openFaq === index 
                       ? 'bg-white border-white rotate-180' 
                       : 'bg-black group-hover:border-gray-600'
@@ -137,8 +136,8 @@ const FAQ = () => {
                       : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <div className="pb-6 pl-[48px]">
-                    <div className={`text-gray-400 text-base leading-relaxed transform transition-all duration-500 ${
+                  <div className="pb-6 pl-8 sm:pl-[48px]">
+                    <div className={`text-gray-400 text-xs sm:text-sm md:text-base leading-relaxed sm:leading-loose transform transition-all duration-500 ${
                       openFaq === index 
                         ? 'translate-y-0' 
                         : '-translate-y-4'
