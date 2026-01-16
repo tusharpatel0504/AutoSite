@@ -108,7 +108,7 @@ export default function RecentProjects() {
                 onMouseEnter={() => setActiveImage(project.image)}
                 onClick={() => {
                   if (project.id === "Chatbot Development") {
-                    navigate("/chatbot1"); // Navigate to /chatbot1
+                    navigate("/chatbot"); // Navigate to /chatbot
                   } else if (project.id === "Workflow Automation") {
                     navigate("/workflow"); // Navigate to /workflow
                   } else if (project.id === "Customer Support AI") {

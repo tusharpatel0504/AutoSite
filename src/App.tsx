@@ -45,8 +45,7 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/demo" element={<Demo />} />
           <Route path="/pricing" element={<Pricing />} />
-          {/* <Route path="/chatbot" element={<Chatbot />} /> */}
-          <Route path="/chatbot1" element={<DotBackgroundDemo />} />
+          <Route path="/chatbot" element={<DotBackgroundDemo />} />
           <Route path="/workflow" element={<WorkflowPage />} />
           <Route path="/videoplayer" element={<VideoPlayerPage />} />
           {/* fallback for unknown routes */}

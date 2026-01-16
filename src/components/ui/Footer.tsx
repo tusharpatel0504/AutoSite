@@ -46,7 +46,7 @@ export default function Footer() {
             <h3 className="text-lg font-bold text-white mb-4">Services</h3>
             <ul className="space-y-3">
               <li><Link to="/chatbot" className="hover:text-white transition">AI Chatbot Solutions</Link></li>
-              <li><Link to="/chatbot1" className="hover:text-white transition">Custom Chatbot Development</Link></li>
+              <li><Link to="/chatbot" className="hover:text-white transition">Custom Chatbot Development</Link></li>
               <li><Link to="/workflow" className="hover:text-white transition">Workflow Automation</Link></li>
               <li><Link to="/services" className="hover:text-white transition">All Services</Link></li>
             </ul>
