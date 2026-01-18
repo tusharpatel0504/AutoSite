@@ -1,7 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
-import { Building2 } from "lucide-react";
+import { Building2, Mail, Share2, Bot, Phone, ShoppingBag, Laptop, Shirt } from "lucide-react";
+import { FaWhatsapp, FaChartLine, FaPiggyBank } from "react-icons/fa";
+import { BsBriefcase, BsStopwatchFill } from "react-icons/bs";
+import { GiLipstick } from "react-icons/gi";
+import { Ri24HoursFill } from "react-icons/ri";
 import { Card, CardContent } from "./ui/card";
 
 const About = () => {
@@ -11,47 +15,47 @@ const About = () => {
 
   const industries = [
     {
-      icon: "👗",
+      icon: Shirt,
       title: "Fashion & Apparel",
-      description: "Smart chatbots that help customers find the perfect outfit and style advice",
+      description: "Smart chatbots that help customers find the perfect outfit",
     },
     {
-      icon: "💄",
+      icon: GiLipstick,
       title: "Beauty & Cosmetics",
-      description: "AI assistants that recommend products based on skin type and preferences",
+      description: "AI assistants that recommend products based on preferences",
     },
     {
-      icon: "🛒",
+      icon: ShoppingBag,
       title: "E-commerce",
-      description: "Automated shopping assistants that guide customers through their purchase journey",
+      description: "Automated assistants that guide customers through purchases",
     },
     {
-      icon: "💻",
+      icon: Laptop,
       title: "IT & Technology",
-      description: "Intelligent support systems that solve technical problems quickly",
+      description: "Intelligent support systems that solve problems quickly",
     },
   ];
 
   const benefits = [
     {
-      icon: "📈",
+      icon: FaChartLine,
       title: "35% More Sales",
-      description: "Our AI chatbots help turn more visitors into customers",
+      description: "Instant responses mean more customers buy. Simple as that.",
     },
     {
-      icon: "💰",
+      icon: FaPiggyBank,
       title: "60% Cost Savings",
-      description: "Reduce your customer support team expenses significantly",
+      description: "Cut support costs by over half. Real money back in your pocket.",
     },
     {
-      icon: "⏰",
+      icon: BsStopwatchFill,
       title: "Save Time",
-      description: "Automate repetitive tasks and focus on growing your business",
+      description: "Get back hours every day. Focus on what actually grows your business.",
     },
     {
-      icon: "⚡",
-      title: "24/7 Support",
-      description: "Your AI assistant works round the clock, never takes a break",
+      icon: Ri24HoursFill,
+      title: "24/7 Availability",
+      description: "Your business never sleeps. Help customers anytime, zero overtime.",
     },
   ];
 
@@ -76,26 +80,115 @@ const About = () => {
             </span>
           </h1>
           <p className="text-gray-300 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed">
-            Autosite creates smart AI chatbots that work like your best customer support team member. 
-            We help businesses save money, save time, and sell more.
+            Running a business means drowning in emails, social media, and customer messages. We automate the repetitive work 
+            so you can focus on growth - no extra hiring, no late nights managing your inbox.
           </p>
         </div>
 
-        {/* What We Do Section */}
+        {/* What We Automate Section */}
         <div className="mb-20">
           <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-4">
-            What We Do
+            What We Automate For You
+          </h2>
+          <p className="text-gray-300 text-center mb-8 text-lg max-w-3xl mx-auto">
+            We automate time-consuming tasks so your business runs smoothly while you sleep.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <Card className="border-gray-700 bg-black hover:bg-gray-900 transition-all duration-300">
+              <CardContent className="p-6">
+                <div className="w-14 h-14 rounded-xl border border-gray-600 bg-white/5 flex items-center justify-center mb-4">
+                  <Mail className="w-7 h-7 text-gray-300" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Email Automation</h3>
+                <p className="text-gray-400 text-sm">
+                  Automate follow-ups, customer queries, and routine emails so your inbox doesn't control your life.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-gray-700 bg-black hover:bg-gray-900 transition-all duration-300">
+              <CardContent className="p-6">
+                <div className="w-14 h-14 rounded-xl border border-gray-600 bg-white/5 flex items-center justify-center mb-4">
+                  <Share2 className="w-7 h-7 text-gray-300" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Social Media Automation</h3>
+                <p className="text-gray-400 text-sm">
+                  LinkedIn, Instagram, Facebook - schedule posts and respond to messages without being glued to your phone.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-gray-700 bg-black hover:bg-gray-900 transition-all duration-300">
+              <CardContent className="p-6">
+                <div className="w-14 h-14 rounded-xl border border-gray-600 bg-white/5 flex items-center justify-center mb-4">
+                  <FaWhatsapp className="w-7 h-7 text-gray-300" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">WhatsApp Automation</h3>
+                <p className="text-gray-400 text-sm">
+                  Instant replies, booking confirmations, and order updates - your WhatsApp becomes a 24/7 sales machine.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-gray-700 bg-black hover:bg-gray-900 transition-all duration-300">
+              <CardContent className="p-6">
+                <div className="w-14 h-14 rounded-xl border border-gray-600 bg-white/5 flex items-center justify-center mb-4">
+                  <Bot className="w-7 h-7 text-gray-300" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Smart AI Chatbots</h3>
+                <p className="text-gray-400 text-sm">
+                  Answer FAQs and guide customers through purchases - your best salesperson working 24/7.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-gray-700 bg-black hover:bg-gray-900 transition-all duration-300">
+              <CardContent className="p-6">
+                <div className="w-14 h-14 rounded-xl border border-gray-600 bg-white/5 flex items-center justify-center mb-4">
+                  <BsBriefcase className="w-7 h-7 text-gray-300" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Business Process Automation</h3>
+                <p className="text-gray-400 text-sm">
+                  Scheduling, invoicing, data entry, onboarding - automate the repetitive work that drains your team.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-gray-700 bg-black hover:bg-gray-900 transition-all duration-300">
+              <CardContent className="p-6">
+                <div className="w-14 h-14 rounded-xl border border-gray-600 bg-white/5 flex items-center justify-center mb-4">
+                  <Phone className="w-7 h-7 text-gray-300" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Call Automation</h3>
+                <p className="text-gray-400 text-sm">
+                  Automate inbound and outbound calls - handle customer inquiries, follow-ups, and sales calls without manual effort.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <p className="text-gray-300 text-center text-lg max-w-3xl mx-auto">
+            Less manual work, fewer people needed, more time to build your business.
+          </p>
+        </div>
+
+        {/* Industries We Serve */}
+        <div className="mb-20">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-4">
+            Industries We Work With
           </h2>
           <p className="text-gray-300 text-center mb-12 text-lg max-w-3xl mx-auto">
-            We build AI chatbots that talk to your customers, answer their questions, and help them buy from you. 
-            Think of it as having a super-smart assistant that never sleeps.
+            We've helped businesses across industries cut costs and boost efficiency.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {industries.map((industry, index) => (
               <Card key={index} className="border-gray-700 bg-black hover:bg-gray-900 transition-all duration-300">
                 <CardContent className="p-6 text-center">
-                  <div className="text-5xl mb-4">{industry.icon}</div>
+                  <div className="w-14 h-14 rounded-xl border border-gray-600 bg-white/5 flex items-center justify-center mb-4 mx-auto">
+                    <industry.icon className="w-7 h-7 text-gray-300" strokeWidth={1.5} />
+                  </div>
                   <h3 className="text-xl font-bold text-white mb-3">{industry.title}</h3>
                   <p className="text-gray-400 text-sm">{industry.description}</p>
                 </CardContent>
@@ -107,10 +200,10 @@ const About = () => {
         {/* Why Choose Us Section */}
         <div className="mb-20">
           <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-4">
-            Why Choose Autosite?
+            Why Business Owners Choose Us
           </h2>
           <p className="text-gray-300 text-center mb-12 text-lg max-w-3xl mx-auto">
-            We don't just build chatbots. We build solutions that help your business make more money and spend less.
+            No fancy jargon. Just solutions that solve real problems and save you real money.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -118,8 +211,8 @@ const About = () => {
               <Card key={index} className="border-gray-700 bg-gray-950/90 backdrop-blur-sm hover:bg-gray-900 transition-all duration-300">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-14 h-14 bg-black border-2 border-gray-700 rounded-2xl flex items-center justify-center text-3xl">
-                      {benefit.icon}
+                    <div className="flex-shrink-0 w-14 h-14 rounded-xl border border-gray-600 bg-white/5 flex items-center justify-center">
+                      <benefit.icon className="w-7 h-7 text-gray-300" />
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold text-white mb-2">{benefit.title}</h3>

@@ -6,53 +6,53 @@ const reviews = [
     name: "Suyash Ranjan",
     role: "Founder",
     company: "Mercato Agency",
-    initials: "SJ",
+    initials: "SR",
     imageUrl: "https://cgahzcwiqcblmkwblqaj.supabase.co/storage/v1/object/public/autosite%20data/suyash.png",
     stars: 5,
   },
   {
-    text: "The workflow automation has streamlined our processes incredibly. What used to take hours now happens in minutes with their intelligent systems.",
-    name: "Michael Beares",
-    role: "Founder & CEO",
-    company: "Clutch.co",
-    initials: "MB",
-    imageUrl: "https://cgahzcwiqcblmkwblqaj.supabase.co/storage/v1/object/public/autosite%20data/Clutch.co.jpg",
-    stars: 5,
-  },
-  {
-    text: "Their fashion industry chatbot understands our customers' needs perfectly. Sales conversions have increased by 40% since implementation.",
-    name: "Shaan Shah",
-    role: "Co-Founder",
-    company: "FREAKINS",
-    initials: "PS",
-    imageUrl: "https://cgahzcwiqcblmkwblqaj.supabase.co/storage/v1/object/public/autosite%20data/Freakins.jpg",
-    stars: 5,
-  },
-  {
-    text: "Awesome AI solutions! The integration was seamless and the results are good. Highly recommend Autosite for any startup.",
-    name: "Tanmay Kumar",
-    role: "CEO",
-    company: "sellular",
-    initials: "TK",
-    imageUrl: "https://cgahzcwiqcblmkwblqaj.supabase.co/storage/v1/object/public/autosite%20data/sellular.jpg",
-    stars: 5,
-  },
-  {
-    text: "The Email automation system has optimized our communication workflows. Automatic Emailing with follow-up is now 70% more efficient.",
-    name: "Kushagra Swami",
+    text: "Autosite automated our email system to auto-reply to customers, which saved us tremendous time. We no longer need to hire additional people just to handle customer emails. It's been a game changer!",
+    name: "Suchi Mukherjee",
     role: "Founder",
-    company: "Identityforgestidio",
-    initials: "KS",
-    imageUrl: "https://cgahzcwiqcblmkwblqaj.supabase.co/storage/v1/object/public/autosite%20data/kushagra.jpg",
+    company: "LimeRoad",
+    initials: "SM",
+    imageUrl: "https://n-img1.junaroad.com/assets/images/mobileNotif/img-1680163303252.jpg",
     stars: 5,
   },
   {
-    text: "The AI Chatbot you provided has transtraform the student engagement on our platform. It's like having a personal teacher available 24/7. also solve any doubt related to studies and courses purchase",
+    text: "The Smart AI chatbot from Autosite has been incredibly helpful for our students. It solves queries related to our platform and education seamlessly, making their learning experience much smoother.",
     name: "Abhijeet Suman",
     role: "Founder",
     company: "siksha.store",
+    initials: "AS",
+    imageUrl: "https://cgahzcwiqcblmkwblqaj.supabase.co/storage/v1/object/public/ahhijeet/siksha%20logo.png",
+    stars: 5,
+  },
+  {
+    text: "Autosite automated our social media management, which has significantly increased our social presence. Scheduling posts and engaging with followers has never been easier. It's been a total game changer for our brand!",
+    name: "Kushagra",
+    role: "Founder",
+    company: "Influx",
+    initials: "K",
+    imageUrl: "https://cgahzcwiqcblmkwblqaj.supabase.co/storage/v1/object/public/cellular-text-pdf/Screenshot%202026-01-18%20184554.png",
+    stars: 5,
+  },
+  {
+    text: "We integrated an email campaigning system and auto email reply from Autosite. It not only increased our sales but also saved us countless hours responding to repetitive queries. Highly recommended!",
+    name: "Kushagra Swami",
+    role: "Founder",
+    company: "Identityforge Studio",
     initials: "KS",
-    imageUrl: "https://cgahzcwiqcblmkwblqaj.supabase.co/storage/v1/object/public/ahhijeet/abhijeet.jpg",
+    imageUrl: "https://framerusercontent.com/images/5Uhlv0n5yHOvJMaECUWECZJoUk.svg",
+    stars: 5,
+  },
+  {
+    text: "The Smart AI recommendation filtering system from Autosite has transformed how students find what they're looking for. It's intuitive, efficient, and has significantly improved our user experience.",
+    name: "Tanmay Kumar",
+    role: "Founder",
+    company: "Sellular",
+    initials: "TK",
+    imageUrl: "https://cgahzcwiqcblmkwblqaj.supabase.co/storage/v1/object/public/autosite%20data/sellular.jpg",
     stars: 5,
   },
 ];
@@ -106,7 +106,7 @@ export default function Review() {
                   
                   <div className="relative z-10">
                     {/* Header with Image and Name */}
-                    <div className="flex items-center gap-4 mb-4">
+                    <div className="flex items-center gap-6 mb-6">
                       <img 
                         src={review.imageUrl}
                         alt={review.name}

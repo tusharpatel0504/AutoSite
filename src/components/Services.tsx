@@ -14,8 +14,8 @@ const projects = [
     borderColor: "border-[#2E2E2E]",
   },
   {
-    id: "Workflow Automation",
-    title: "Workflow Automation",
+    id: "Business Automation",
+    title: "Business Automation",
     subtitle: " Streamline your business processes with intelligent custom automation solutions for operational workflows.",
     image: "/workflowCoverImage.png",
     borderColor: "border-[#2E2E2E]",
